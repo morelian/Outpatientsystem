@@ -34,6 +34,8 @@ namespace Outpatientsystem
             sqlConnection.Close();                                                        
             if (rowCount == 1)                                                             
             {
+                Session["No"] = this.TextBoxid.Text;
+                Response.Redirect($"Index.aspx?Id={this.TextBoxid.Text}");
                 Labelmgls.Text = "登陆成功";									
             }
             else                                                                          

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outpatientsystem", "Outpatientsystem\Outpatientsystem.csproj", "{D315BA2A-53E4-45A1-A5F9-4B669142088D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sever", "Sever\Sever.csproj", "{981C4636-D906-4574-AF03-ED978492B6E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D315BA2A-53E4-45A1-A5F9-4B669142088D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D315BA2A-53E4-45A1-A5F9-4B669142088D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D315BA2A-53E4-45A1-A5F9-4B669142088D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{981C4636-D906-4574-AF03-ED978492B6E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{981C4636-D906-4574-AF03-ED978492B6E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{981C4636-D906-4574-AF03-ED978492B6E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{981C4636-D906-4574-AF03-ED978492B6E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

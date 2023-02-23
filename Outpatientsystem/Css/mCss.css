@@ -1,0 +1,530 @@
+@media(max-width:1680px){
+
+}
+
+@media(max-width:1440px){
+
+}
+
+@media(max-width:1280px){
+
+}
+
+@media(max-width:768px){
+.boxTop{display:none}
+.boxTopM{display:block}
+.bannerBox{ display:none}
+.bannerM{display:block}
+.rightNav{display:none}
+
+.indexIco{width:100%; background:none; padding:0;}
+.indexIco div{ background:none}
+.indexIco a{ height:auto; margin:0;}
+.indexIco a img{ margin:0; width:30px;}
+.indexIco a i{font-size:12px; color:#333; display:block}
+.indexIco a:hover{background-size:50px 50px}
+.indexIco a:last-of-type{ background:none}
+
+
+.indexNews{padding:5px 15px 15px 15px}
+.indexNewsL{ width:100%;display:inline-block; margin:0; vertical-align:top; position:relative}
+.indexNewsNav{height:42px;}
+.indexNewsNav a{width:70px;font-size:12px; line-height:40px; }
+
+
+.indexNewsList{ width:100%; display:none}
+.indexNewsList span{ display:block}
+.indexNewsList span a{width:100%;display:block; line-height:22px; font-size:14px; border-bottom:1px solid #aaa7a6; background:url(../images/bgLi.jpg) no-repeat 3px 17px; padding:10px 0 10px 15px;}
+.indexNewsList span a i{ float:none; width:100%; }
+.indexNewsList span a:first-child{ padding:19px 0; font-size:0; background:none}
+.indexNewsList span a img{width:120px; height:80px;}
+.indexNewsList span a h1{ width:calc(100% - 120px); padding:0 0 0 15px;}
+.indexNewsList span a strong{font-size:16px;line-height:24px;}
+.indexNewsList span a font{ display:none}
+
+.indMore{top:0; right:0}
+.indMore a{height:40px;}
+
+.indMore1{ top:0; right:15px}
+.indMore1 a{height:54px;}
+
+
+.indexNewsR{ width:100%; height:auto; padding:0 15px 10px 15px}
+.indexNoticeNav{ font-size:16px; line-height:50px; }
+.indexNoticeNav span{ margin:2px 0 0 10px;}
+.indexNoticeNav span a{font-size:13px;}
+.indexNoticeList{ padding:10px 0 0 0}
+.indexNoticeList a{ display:block; padding:10px 0;}
+.indexNoticeList a span{ display:inline-block; width:60px; height:60px; background:#521013; color:#fff; text-align:center; vertical-align:middle}
+.indexNoticeList a span h1{ font-size:30px; line-height:40px;}
+.indexNoticeList a span h2{ background:rgba(0,0,0,.4); line-height:20px; font-size:12px; opacity:0.5}
+.indexNoticeList a i{ width:calc(100% - 60px);font-size:14px; }
+
+
+.indKs{ width:100%;height:auto; background:rgba(0,0,0,.05); padding:30px 0 20px 15px}
+.indKs1{ width:100%;padding:0}
+.indKs1 .imgNavPc{display:none}
+.indKs1 .imgNavM{display:block; width:100%; margin-bottom:10px;}
+.indKsList a{display:inline-block; width:calc((100vw - 40px)/3); height:76px; margin:0 5px 13px 0; background-size:100% 100%; text-align:center}
+.indKsList a img{ margin:10px 0 0 0; height:50%;}
+.indKsList a .icoKs{}
+.indKsList a .icoKsOn{ display:none}
+.indKsList a i{display:block; font-size:10px; line-height:16px;}
+.indKsList a:hover{background-size:100% 100%;} 
+.indKsList a:hover .icoKs{ display:none}
+.indKsList a:hover .icoKsOn{ display:inline-block}
+
+
+.indDoc{width:100%; height:auto; padding:30px 15px 0 15px}
+.indDoc .imgNavPc{display:none}
+.indDoc .imgNavM{display:block; width:100%; margin-bottom:10px;}
+
+.indDocList{width:100%; height:auto; padding-bottom:60px; overflow:hidden; position:relative;}
+.indDocList .swiper-slide{width:100%;height:80px;  margin-bottom:10px; padding:10px 15px; background:#fff url(../images/icoCurJt.png) no-repeat calc(100% - 15px) center}
+.indDocList .swiper-pagination{bottom:30px!important;}
+.indDocList .swiper-pagination-bullet{margin:0 2px!important;}
+.indDocList .swiper-button-prev{left:0;bottom:25px; width:40px; height:15px; background:url(../images/icoJtL.png); background-size:100% 100%;}
+.indDocList .swiper-button-prev:hover{background:url(../images/icoJtLHover.png); background-size:100% 100%;}
+.indDocList .swiper-button-next{right:0;bottom:25px; width:40px; height:15px; background:url(../images/icoJtR.png);; background-size:100% 100%;}
+.indDocList .swiper-button-next:hover{background:url(../images/icoJtRHover.png); background-size:100% 100%;}
+
+.indDocList .swiper-slide span{ width:60px; height:60px; display:inline-block; vertical-align:middle}
+.indDocList .swiper-slide h1{ font-size:12px; font-weight:normal; line-height:20px; display:inline-block; width:calc(100% - 60px); padding:0 0 0 20px; text-align:left; vertical-align:middle}
+.indDocList .swiper-slide h1 i{font-weight:bold;  font-size:16px; line-height:20px; font-weight:bold; margin:0}
+.indDocList .swiper-slide h2{ display:none}
+
+
+
+
+
+.indWhcc{width:100%; height:auto; background:url(../images/bgWhccM.jpg) no-repeat center center/cover; position:relative; margin:0 0 20px 0; padding:30px 0;}
+.indWhcc span{left:10px; top:30px;}
+.indWhcc span img{width:50px}
+.indWhcc div{ padding:0 20px 0 60px;}
+.indWhcc div li{ padding-bottom:0;}
+.indWhcc div li a{display:block; margin:0 auto 10px auto}
+
+.indWhcc div li a i{ width:1px; height:100%; display:inline-block; vertical-align:middle}
+.indWhcc div li a font{ width:220px;  font-size:12px; line-height:14px; display:inline-block; vertical-align:middle; text-align:center; padding:0 0 0 15px; box-sizing:border-box; }
+
+
+
+.indListBox{ width:100%; padding:20px 15px 0 15px;}
+
+.indList{ width:100%;  margin:0 0 20px 0; }
+.indListNav{height:42px;}
+.indListNav i{width:120px;font-size:16px; line-height:40px; }
+.indList span a{width:100%;display:block; line-height:22px; font-size:14px; border-bottom:1px solid #aaa7a6; background:url(../images/bgLi.jpg) no-repeat 3px 17px; padding:10px 0 10px 15px;}
+.indList span a i{ float:none; width:100%; }
+.indList span a:first-child{ padding:19px 0; font-size:0; background:none}
+.indList span a img{width:120px; height:80px;}
+.indList span a h1{ width:calc(100% - 120px); padding:0 0 0 15px;}
+.indList span a strong{font-size:16px;line-height:24px;}
+.indList span a font{ display:none}
+
+.indFoot{ padding:30px 15px 30px 15px; height:auto;}
+.indFootNav{background:url(../images/logoFoot.png) no-repeat center center/auto 30px; height:30px;}
+.indFoot1{width:100%; padding:10px 0 0 0;}
+.indFoot1 span{ width:100%;}
+.indFoot1 span p{ line-height:22px; padding:12px 0 12px 30px; border-bottom:1px solid rgba(255,255,255,.2); display:block}
+.indFoot1 span p:nth-child(1){ background:url(../images/icoContact1.png) 0 12px no-repeat}
+.indFoot1 span p:nth-child(2){ background:url(../images/icoContact2.png) 0 12px no-repeat}
+.indFoot1 span p:nth-child(3){ background:url(../images/icoContact3.png) 0 12px no-repeat}
+.indFoot1 span p:nth-child(4){ background:url(../images/icoContact4.png) 0 12px no-repeat}
+.indFoot1 i{width:50%; text-align:center; margin:20px 0 0 0; }
+.indFoot1 i img{ width:90px;}
+.indFoot1 i h1{ font-size:12px}
+
+
+
+.boxFoot{ padding:20px 15px}
+.boxFoot1{width:100%; height:auto;text-align:center}
+.boxFoot2{border-bottom:1px solid rgba(255,255,255,0.1); padding:0 0 10px 0; margin:0 0 10px 0; }
+.boxFoot2 i{ margin:0 5px 0 0; padding:0 6px 0 0}
+.boxFoot2 i:first-child{background:none; width:100%; margin:0; padding:0; }
+
+.boxFoot3{width:100%;margin:0}
+.boxFoot3 img{margin:0 15px 0 0; height:26px;}
+.boxFoot3 i{ width:100%;}
+.boxFoot3 select{ display:block; width:70%; margin:10px auto 0 auto}
+
+.boxFoot4{margin-top:0}
+.boxFoot4 img{ height:60px;}
+
+
+.subBanner{ width:100%; height:26vw; margin-top:70px;}
+
+.subNav{margin:0 auto 10px auto; padding:0 0 0 5px}
+.subNav a{ width:calc((100% - 35px)/4);padding:0;font-size:12px; height:34px; line-height:34px; margin:0 0 5px 5px; text-align:center}
+.subNav a i{ height:100px; background:url(../images/bgSubNavOn.png) center no-repeat; width:99.9%;position:absolute; bottom:0; left:0; display:none; z-index:-1;}
+.subNav .on{ background:#8a0c0f}
+
+
+.curNav{ width:100%;margin:70px 0 0 0; font-size:12px;height:auto;line-height:20px; padding:15px 0 15px 10px; opacity:0.7}
+.curNav a{display:inline-block; background:url(../images/icoCurJt.png) center left no-repeat; padding-left:15px; margin-right:10px; vertical-align:middle;}
+
+.navTitle{width:calc(100% - 20px);margin:5px 10px 20px 10px;}
+.navTitle span{ display:inline-block; background:url(../images/bg1.jpg)}
+.navTitle h1{background:url(../images/bgTitle.png) no-repeat left center}
+.navTitle i{ font-size:26px; line-height:26px; padding:0 20px; max-width:280px}
+
+.marginTop55{ margin-top:30px}
+
+.box{width:calc(100vw - 20px); margin:0 10px 10px 10px; padding:0 0 20px 0}
+.boxTL{width:12px; height:12px;}
+.boxTR{width:12px; height:12px;}
+.boxBL{width:12px; height:12px;}
+.boxBR{width:12px; height:12px;}
+
+
+.padding70{ padding:0 15px 20px 15px}
+.padding40{ padding:0 10px 20px 10px}
+
+
+
+.imgPc{display:none}
+.imgM{display:block}
+
+
+.bgYyjj{height:auto; background-size:cover}
+.boxYyjj{padding:0 15px}
+.boxYyjj .imgNavPc{ display:none}
+.boxYyjj .imgNavM{display:block; margin:30px 0 15px 0}
+.boxYyjjText{ width:100%; font-size:14px; line-height:24px; margin:0}
+.boxYyjjText a{margin:20px auto 30px auto}
+.boxYyjjImg{ width:100%; margin:0 0 30px 0}
+
+.gkNews{ padding:0 15px;}
+.gkNews a{width:100%;  margin:0 0 20px 0; }
+.gkNews a:last-child{margin-right:0}
+.gkNews a div{ height:auto;}
+.gkNews a span{padding:15px;}
+.gkNews a span h1{ font-size:14px; line-height:24px; height:auto}
+.gkNews a span h2{font-size:14px; line-height:24px; }
+.btnMore{margin:0 auto 30px auto;}
+
+
+.bgJtwz{height:auto; background-size:cover}
+.boxJtwz{padding:0 15px}
+.boxJtwz .imgNavPc{ display:none}
+.boxJtwz .imgNavM{display:block; margin:30px 0 15px 0}
+.boxJtwzText{ width:100%;margin:20px 0 30px 0;font-size:14px; line-height:24px;}
+.boxJtwzText p{padding:0 0 0 30px}
+.boxJtwzText p:nth-child(1){ background:url(../images/icoContact1.png) 0 3px no-repeat}
+.boxJtwzText p:nth-child(2){ background:url(../images/icoContact3.png) 0 3px no-repeat}
+.boxJtwzText p:nth-child(3){ background:url(../images/icoContact4.png) 0 3px no-repeat}
+.boxJtwzMap{ width:100%; height:260px; margin:0}
+
+.gkZzjg{ padding:0 10px 30px 10px}
+.gkZzjg img{width:100%}
+
+.bgYywh{height:auto; background-size:cover; padding:0 15px 40px 15px;}
+.boxYywh{height:auto;padding:0}
+.boxYywh .imgNavPc{ display:none}
+.boxYywh .imgNavM{display:block; margin:30px 0 15px 0}
+
+.navYywh{padding:0;border-bottom:2px solid rgba(255,255,255,0.2)}
+.navYywh a{border-bottom:none; width:25%; font-size:14px;line-height:30px; margin-bottom:5px}
+.navYywh .on{border-bottom:none!important; background:#ffac5a; font-weight:bold; color:#fff}
+
+.boxYywhText{font-size:14px; line-height:24px; padding:0;}
+.boxYywhText h1{font-size:24px;line-height:30px; padding:20px 0 15px 0}
+
+
+.djNews{height:auto; padding:0 15px}
+.djNewsImg{ display:none}
+.djNewsText{ float:none;width:100%; padding:0}
+.djNewsText img{display:block; width:100%; margin:0 0 10px 0}
+.djNewsText a{ display:block; padding:20px 0; border-bottom:1px solid #9f5d60}
+.djNewsText a span{ display:inline-block; width:60px; height:60px; background:#5e1216; color:#fff; text-align:center; vertical-align:middle}
+.djNewsText a span h1{ font-size:30px; line-height:40px;}
+.djNewsText a span h2{ background:rgba(0,0,0,.4); line-height:20px; font-size:12px; opacity:0.5}
+.djNewsText a i{ display:inline-block; width:calc(100% - 60px); padding:0 0 0 12px; font-size:14px; line-height:20px; color:#fff; opacity:1.0; vertical-align:middle}
+
+.btnMore1{ position:relative; right:0; bottom:0; text-align:center; }
+.btnMore1 a{margin:30px auto}
+
+.boxLine{ display:none}
+
+.listBox{padding:15px 15px 0 15px;}
+.listText{width:100%; height:auto; margin:0 0 15px 0; padding:0 15px;}
+.listTextNav{height:50px;}
+.listTextNav i{font-size:20px; line-height:50px; }
+.listText span a{line-height:20px; font-size:14px; background:url(../images/bgLi.jpg) no-repeat 7px 23px; padding:15px 0 15px 23px;}
+.listText span a i{display:block; float:none; text-align:right}
+
+.listTextMore{ right:15px}
+.listTextMore a{ height:50px;}
+
+
+
+.boxText{font-size:14px; line-height:24px;}
+.boxText h1{font-size:18px; line-height:30px; margin:20px 0 10px 0;}
+.titleYyjj{ font-size:18px;padding:0 0 0 15px; margin:10px 0}
+
+
+.jtwzMap{ height:260px; margin:15px 0 0 0}
+.jtwzText{ font-size:14px; line-height:24px; margin:0}
+.jtwzText p{padding:15px 0 15px 30px; border-bottom:1px dotted #555}
+.jtwzText p:nth-child(1){ background:url(../images/icoContact1a.png) 0 16px no-repeat}
+.jtwzText p:nth-child(2){ background:url(../images/icoContact3a.png) 0 16px no-repeat}
+.jtwzText p:nth-child(3){ background:url(../images/icoContact4a.png) 0 16px no-repeat}
+
+
+
+.textList{ padding:0}
+.textList a{  padding:15px 0; background:url(../images/icoJtLi.png) no-repeat right center/16px 10px}
+.textList a span{ display:inline-block; width:60px; height:60px;}
+.textList a span h1{ font-size:24px;}
+.textList a span h2{ background:rgba(0,0,0,.4); line-height:20px; font-size:12px; opacity:0.5}
+.textList a i{width:calc(100% - 60px); padding:0 15px 0 15px; font-size:14px; line-height:20px; }
+.textList a:hover{background:url(../images/icoJtLiHover.png) no-repeat right center/16px 10px}
+
+.boxPage{ text-align:center;margin:20px auto 0 auto;}
+.boxPage a{display:none; width:30px; height:30px; line-height:30px; margin-right:5px; font-size:12px}
+.boxPage .pcmPage{ display:inline-block!important}
+.boxPage span{display:inline-block;margin:0 10px 0 5px;}
+
+.textPage{ line-height:30px; padding:0 10px; border-radius:15px;margin-right:5px;}
+
+
+.boxShow{ width:100%;padding:0 20px; margin:10px 0}
+.showLeft{display:none}
+.showCenter{padding:5px 0 0 0}
+.showTitle{font-size:18px;line-height:26px; }
+.showInfo i:last-child{ display:inline-block; margin:0 0 0 10px}
+.showCon{ padding:15px 0 20px 0;font-size:14px; line-height:24px;}
+.showRight{width:100%; margin:0;}
+.btnShare1{display:none}
+
+
+.ksList{ padding:10px 0 0 0;}
+.ksList a{margin:0 0 10px 0; width:100%; height:auto;  padding:10px 10px 50px 10px;}
+.ksList a div{ width:100px; height:100px; background:url(../images/bgKsIco.png) no-repeat center/100px 100px; margin:5px 0 0 0}
+.ksList a div img{ margin:30px 0 0 0; width:40px;}
+.ksList a span{width:calc(100% - 100px); padding:15px 10px 0 10px;}
+.ksList a span h1{ font-size:16px; line-height:20px;}
+.ksList a span h2{ font-size:12px; line-height:22px; color:#555; margin:7px 0 10px 0}
+.ksList a span h3{bottom:20px; right:20px;}
+
+
+.showTitleKs{font-size:18px; line-height:26px; padding:30px 0 20px 0; margin:0 0 20px 0}
+.showKs{font-size:14px; line-height:24px;}
+
+
+
+.searchClass{padding:20px 0 0 0;}
+.searchClass li{position:relative; font-size:0; padding:0 0 10px 40px;line-height:28px; margin:0 -5px 0 0}
+.searchClass i{ font-size:12px;}
+.searchClass a{font-size:9px;padding:0; margin:0 5px 5px 0; min-width:calc((100% - 20px)/4); width:auto; padding:0 5px; text-align:center; vertical-align:top}
+
+
+.navDoc{width:100%; padding-top:0px; margin:0 0 15px 0}
+.navDoc span{font-size:14px;}
+.navDoc span i{font-size:24px;}
+
+
+/*.searchDoc{bottom:auto; top:0; right:0; width:100%; border:1px solid #c2c2c2}*/
+.searchDoc{ margin:20px auto 0 auto;width:100%; border:1px solid #c2c2c2}
+.inputDoc{ height:36px; line-height:36px; font-size:12px; }
+.submitDoc{height:36px;}
+
+
+.docList{}
+.docList a{width:100%; height:auto; padding:15px; margin:0 0 10px 0; position:relative; text-align:left}
+.docList a span{width:70px; height:70px; display:inline-block; vertical-align:top}
+.docList a div{display:inline-block; width:calc(100% - 70px); vertical-align:top; padding:0 30px 0 15px}
+.docList a h1{ font-size:17px; font-weight:bold; line-height:17px; margin:5px 0 5px 0;}
+.docList a h2{ font-size:12px; line-height:20px; padding:0; background:none}
+.docList a h3{ width:21px; height:21px; background:url(../images/icoJt.png) no-repeat center right;position:absolute; right:10px; top:50%;margin:-10px 0 0 0; bottom:auto; left:auto}
+
+
+.zjList{padding:10px 0 0 0; margin-bottom:-10px}
+.zjList a{ display:inline-block; width:100%; height:auto; padding:20px 10px; margin:0 0 10px 0}
+.zjList a span{ width:70px; height:70px;}
+.zjList a div{width:calc(100% - 70px); padding:0 0 20px 10px; }
+.zjList a h1{ font-size:13px; font-weight:bold; line-height:17px;}
+.zjList a h2{ font-size:12px; line-height:20px; padding:5px 0 0 0;}
+.zjList a h3{ width:16px; height:16px; background:url(../images/icoJt.png) no-repeat center center/100% 100%;top:auto; bottom:-5px;}
+
+
+
+
+
+
+.docTc{width:100%; height:100%; top:0; left:0; margin:0; padding:40px 20px 20px 20px;}
+.docPic{float:none; width:90px; display:block; margin:0 auto;}
+.docBox{float:none; width:100%; margin:20px 0 0 0}
+.docNav span{ font-size:18px; display:block}
+.docCon{ font-size:14px; line-height:26px; margin:10px 0 0 0; /*max-height:calc(100vh - 350px)*/;}
+
+
+
+
+.newsList{ padding:0}
+.newsList a{padding:20px 0;}
+.newsList a div{width:110px; vertical-align:top}
+.newsList a span{ width:calc(100% - 110px); padding:0 0 18px 15px; min-height:72px; position:relative;vertical-align:top}
+.newsList a span h1{ font-size:14px; font-weight:normal; line-height:18px; margin:0; text-align:justify}
+.newsList a span h2{ display:none}
+.newsList a span h3{ font-size:10px; line-height:10px;position:absolute; right:0; bottom:0}
+
+.whccList{}
+.whccList a{margin:20 0 0 0}
+.whccList a div{ width:100%; height:auto;}
+.whccList a div img{width:100%}
+.whccList a span{width:100%; height:auto; padding:20px;}
+.whccList a span h1{ font-size:15px;line-height:24px; padding:5px 0}
+.whccList a span h2{ font-size:14px; line-height:24px; }
+.whccList a:nth-child(even) div{ float:left}
+
+.navContact{margin:20px 0 0 0}
+.navContact a{font-size:15px;} 
+
+
+
+.boxContact1 span{display:block; line-height:22px; font-size:14px; }
+.boxContact1 i{ position:relative; top:auto; right:auto; display:block; margin:20px 0 0 0}
+.contactMap{ height:260px}
+
+
+/*------------------------msg------------------------*/
+
+.yzxxSearch{position:relative; padding:25px 0 35px 0;border-bottom:1px solid #8a0c0f;}
+.selectYzxx{width:80px; height:40px; line-height:38px;border:1px solid #ccc; padding:0 0 0 5px;-webkit-appearance:button}
+.inputYzxx{width:calc(100% - 180px);}
+.submitYzxx{width:80px;font-size:12px;}
+
+.yzxxSearch a{width:120px; height:40px;  top:auto;bottom:-18px; right:0; background:#fff url(../images/btnWyxx.png) no-repeat center right; background-size:100px 40px}
+.yzxxSearch a:hover{background:#fff url(../images/btnWyxxHover.png) no-repeat center right; background-size:100px 40px}
+
+.yzxxHead{ display:none}
+
+.yzxxList{ padding:20px 0 0 0}
+.yzxxList a{ padding:10px 0}
+.yzxxList a i{font-size:12px;  width:33.3%; line-height:24px;}
+.yzxxList a i:first-child{ width:100%;background:url(../images/bgLi1.jpg) no-repeat 0 12px; padding:0 0 0 10px}
+
+.showMsg{margin:20px auto 0 auto}
+.msgLeft{width:30%}
+
+.msgTips{padding:20px 0;line-height:20px; font-size:12px;}
+
+.boxMsg{ padding:0}
+.boxMsg li{padding:10px 0 0 0}
+.boxMsg span{width:80px;font-size:14px; line-height:40px; font-weight:bold}
+.boxMsg li:nth-child(1) span,.boxMsg li:nth-child(2) span,.boxMsg li:nth-child(3) span,.boxMsg li:nth-child(4) span,.boxMsg li:nth-child(5) span{ width:100%;}
+
+
+.inputMsg{width:100%;}
+.inputMsgLong{width:100%!important; margin-right:5px}
+.textareaMsg{width:100%;}
+
+.submitMsg{width:100%; height:40px; line-height:40px; margin:10px 0 0 0;}
+
+/*------------------------msg------------------------*/
+.mzxxTips{display:block; font-size:12px; text-align:center; line-height:26px; padding:10px 0 0 0}
+
+.boxMzxx{ width:100%; overflow-x:auto; margin:10px 0}
+.tabelMzxx td{font-size:12px; }
+.headMzxx td{font-size:12px;}
+.tdBg{ width:100px}
+
+
+.btnTdjl{ position:fixed; top:auto; bottom:0; right:0; margin:0; width:100%}
+
+
+
+/*------------------------登陆注册------------------------*/
+.icoTopUser{ position:fixed;top:27px; right:50px; margin:0; background:none; height:14px; border-bottom-left-radius:0;border-bottom-right-radius:0; padding:0;}
+.btnTopUser{}
+.btnTopUser a{color:#555; line-height:20px; padding:0 6px; border-right:1px solid rgba(0,0,0,0.2)}
+
+
+.topUser{ position:relative; z-index:2;display:none; padding:0 5px; margin-top:-4px; }
+.topUser i{display:block;font-size:10px; font-weight:normal; line-height:14px; color:#555; padding:0 10px 0 0;  background:url(../images/icoTopUserJt_m.png) no-repeat right center; cursor:pointer; width:80px;}
+.topUser i:hover{ color:#555;background:url(../images/icoTopUserJt_m.png) no-repeat right center; }
+.topUser span{ position:absolute; top:41px;left:-5px; background:rgba(0,0,0,0.8); box-shadow:0 0 5px rgba(0,0,0,0.1); width:calc(100% + 10px); text-align:left; display:none; z-index:1; border-radius:6px; border-top:1px solid #fff}
+.topUser span a{ display:block; line-height:46px; font-size:14px; text-align:center; color:#fff; opacity:0.7}
+.topUser span a:hover{opacity:1.0}
+
+.boxMarginTop{ height:70px;}
+.minHeight{min-height:inherit}
+
+.boxLogin{ width:calc(100% - 30px); margin:20px 15px; padding:40px 20px;}
+.navLogin{ font-size:22px; line-height:22px; }
+/*------------------------登陆注册------------------------*/
+
+
+
+/*-----------------------个人中心--------------------*/
+.userNav{ display:none}
+.userMain{width:calc(100vw - 20px);min-height:calc(100vh - 220px);  padding:0 15px 20px 15px;  left:0; margin:10px; border-radius:6px}
+.navUser{ font-size:18px; height:auto; line-height:22px; padding:20px 0 15px 0;}
+
+
+.userForm{ width:100%;}
+
+
+
+.yyglList{width:100%;}
+
+
+
+.userTextList{color:#777}
+.userTextList li{ border-bottom:1px #ccc dotted; padding:20px 0 46px 0; position:relative}
+.userTextList h1 i{ width:50%; margin:0; padding-right:0; line-height:22px; border-right:none; }
+.userTextList h2{ top:auto; bottom:20px;}
+/*---------------------个人中心--------------------*/
+
+
+/*---------------------医生弹窗--------------------*/
+.docTc{width:100%; padding:20px 0 0 0}
+.docPic{float:none; width:80px; display:block; margin:0 auto}
+.docBox{float:none; width:100%; }
+.docNav{font-size:14px; line-height:26px; margin-top:15px; text-align:center;}
+.docNav span{font-size:17px;}
+.docNav span i{display:block; margin:0; font-size:15px;}
+.docCon{ font-size:14px; line-height:24px; }
+
+
+.bookingNav i{font-size:16px; }
+
+.bookingList li h1{ font-size:15px; }
+.bookingList li h2{ font-size:12px; }
+
+
+.bookingFrom{width:100%}
+.bookingGz{width:100%;}
+
+/*---------------------医生弹窗--------------------*/
+
+.showDoc{  padding:30px 20px 0 20px;}
+
+
+.boxTcLine{ display:none}
+.boxTc{ width:100%}
+.boxTcMain{height:calc(100vh - 46px);padding:0 15px 20px 15px;}
+.userFormTc{ width:100%;}
+
+
+.boxSpace30px{height:20px}
+
+.boxYywhText1{ margin-top:0}
+.boxYywhText1 p{border-top:1px dotted rgba(255,255,255,0.5); border-bottom:none; font-size:14px; line-height:24px;}
+.boxYywhText1 i{font-size:20px; line-height:26px; }
+
+
+.ldxxList{padding:20px 0 0 0;}
+.ldxxList a{padding:30px 20px}
+.ldxxList a img{ margin:0 auto 20px auto; display:block}
+.ldxxList a span{width:100%; padding:0 0 20px 0; background:url(../images/icoJtLi.png) no-repeat bottom right;}
+.ldxxList a:hover span{background:url(../images/icoJtLiHover.png) no-repeat bottom right;}
+.ldxxList a:last-child{ margin-bottom:0}
+
+
+
+
+
+}
+
