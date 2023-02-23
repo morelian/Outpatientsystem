@@ -1,0 +1,583 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="Outpatientsystem.Index" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>沐兰门诊系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="Css/animate.css" rel="stylesheet" />
+    <link href="Css/css.css" rel="stylesheet" />
+    <link href="Css/mCss.css" rel="stylesheet" />
+    <link href="Css/validationEngine.jquery.css" rel="stylesheet" />
+    <script src="Css/swiper-4.5.0.min.js"></script>
+    <link href="Css/swiper-4.5.0.min.css" rel="stylesheet" />
+    <script src="Css/jquery.validationEngine.min.js"></script>
+    <script src="Css/jquery.validationEngine-zh_CN.js"></script>
+    <script src="Css/jquery-3.2.1.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   
+
+<div id="boxAll" style="position:relative">
+
+   <div class="icoTopUser">
+  <div class="btnTopUser">
+    <a href="login.aspx">登录</a>
+    <a href="register.aspx">注册</a>
+  </div>
+  </div>
+  </div>
+<!--m-->
+<div class="boxTopM">
+  <a href="index.aspx"><img src="images/logo.png" class="logoM"></a>
+  <a href="javascript:void(0)" class="openMenu" id="menuM"></a>
+</div>
+<!--m-->
+
+<div class="boxTop">
+  <div class="boxTop1">
+    <a href="index.aspx"><img src="Image/logo2.jpg" class="logo"></a>
+    <a href="javascript:void(0)" class="openNav" id="btnTop"></a>
+    <div class="boxNav">
+      <ul>
+        <li>
+          <span class="on"><i></i><a href="index.aspx"><img src="images/imgNav1.png" class="imgNav"><img src="images/imgNav1Hover.png" class="imgNavOn"></a></span>
+        </li>
+        <li>
+          <span><i></i><a href="about.aspx"><img src="images/imgNav2.png" class="imgNav"><img src="images/imgNav2Hover.png" class="imgNavOn"></a></span>
+          <div class="padding1">
+            <a href="about_yyjj.aspx">医院简介</a>
+            <a href="about_yyxw.aspx">医院动态</a>
+            <a href="about_zzjg.aspx">组织架构</a>
+          </div>
+        </li>
+
+
+        <li>
+          <span><i></i><a href="jz.aspx"><img src="images/imgNav4.png" class="imgNav"><img src="images/imgNav4Hover.png" class="imgNavOn"></a></span>
+          <div class="padding3">
+            <a href="yy.aspx">预约挂号</a>
+            <a href="Worksheet.aspx">门诊排班</a>
+            <a href="jz.aspx">就诊须知</a>
+            <a href="jz_jzlc.aspx">就诊流程</a>
+            <a href="about_jtwz.aspx">交通位置</a>
+          </div>
+         </li>
+         <li>
+          <span><i></i><a href="ks.aspx"><img src="images/imgNav5.png" class="imgNav"><img src="images/imgNav5Hover.png" class="imgNavOn"></a></span>
+          <div class="padding4">
+                <a href="showks.aspx?id=75" >国医堂</a>
+              <a href="showks.aspx?id=76" >治未病科（中医健康管理中心）</a>
+              <a href="showks.aspx?id=88" >脑病科</a>
+              <a href="showks.aspx?id=86" >肺病科</a>
+              <a href="showks.aspx?id=85" >心血管科</a>
+              <a href="showks.aspx?id=80" >脾胃病科</a>
+              <a href="showks.aspx?id=81" >肾病科(含血透室)</a>
+              <a href="showks.aspx?id=107" >肝胆科</a>
+              <a href="showks.aspx?id=79" >内分泌科</a>
+              <a href="showks.aspx?id=89" >肿瘤科</a>
+              <a href="showks.aspx?id=108" >血液科</a>
+              <a href="showks.aspx?id=94" >急诊科</a>
+              <a href="showks.aspx?id=87" >重症医学科</a>
+              <a href="showks.aspx?id=90" >外一科（普外科）</a>
+              <a href="showks.aspx?id=93" >外二科（泌尿外科）</a>
+              <a href="showks.aspx?id=109" >肛肠科</a>
+              <a href="showks.aspx?id=92" >耳鼻咽喉科</a>
+              <a href="showks.aspx?id=111" >骨伤一科</a>
+              <a href="showks.aspx?id=98" >眼科</a>
+              <a href="showks.aspx?id=97" >口腔科</a>
+              <a href="showks.aspx?id=96" >皮肤科</a>
+              <a href="showks.aspx?id=77" >康复一科</a>
+              <a href="showks.aspx?id=83" >针灸科</a>
+              <a href="showks.aspx?id=84" >国医堂针推</a>
+              <a href="showks.aspx?id=91" >妇科</a>
+              <a href="showks.aspx?id=95" >儿科</a>
+              <a href="showks.aspx?id=104" >体检科</a>
+             </div>
+        </li>
+        <li>
+          <span><i></i><a href="zj.aspx"><img src="images/imgNav6.png" class="imgNav"><img src="images/imgNav6Hover.png" class="imgNavOn"></a></span>
+          <div class="padding5">
+            <a href="zj.aspx">专家介绍</a>
+            <a href="Worksheet.aspx">门诊排班</a>
+            <a href="zj_yscx.aspx">医生查询</a>
+          </div>
+        </li>
+        <li>
+          <span><i></i><a href="yzxx.aspx"><img src="images/imgNav11.png" class="imgNav"><img src="images/imgNav11Hover.png" class="imgNavOn"></a></span>
+          <div class="padding9">
+             <a href="lxwm.aspx">联系我们</a>
+              <a href="personal.aspx">个人信息</a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+    <div class="icoTop">
+      <a href="javascript:void(0)" class="topSearch"><i></i></a>
+    </div>
+  </div>
+</div>
+
+<div class="searchTop">
+  <a href="javascript:void(0)"></a>
+  <span><form action="search.aspx"><input type="text" name="txtkeyword" class="inputTop" placeholder="请输入关键字"><input type="submit" class="submitTop" value="搜 索"></form></span>
+</div>
+
+<script>
+    $('.topSearch').click(function () {
+        $('.searchTop').slideDown();
+    });
+
+    $('.searchTop a').click(function () {
+        $('.searchTop').hide();
+    });
+
+    $('.topUser i').mouseenter(function () {
+        $('.topUser span').slideDown();
+    });
+
+    $('.icoTopUser').mouseleave(function () {
+        $('.topUser span').hide();
+    });
+</script>
+<script>
+    $('.topSearch').click(function () {
+        $('.searchTop').slideDown();
+    });
+</script>
+
+<script>
+    $('.topSearch').click(function () {
+        $('.searchTop').slideDown();
+    });
+
+    $('.searchTop a').click(function () {
+        $('.searchTop').hide();
+    });
+
+    $('.topUser i').mouseenter(function () {
+        $('.topUser span').slideDown();
+    });
+
+    $('.icoTopUser').mouseleave(function () {
+        $('.topUser span').hide();
+    });
+</script>
+<script>
+$('.topSearch').click(function () {
+    $('.searchTop').slideDown();
+});
+</script>;
+
+
+<div class="searchTop">
+  <a href="javascript:void(0)"></a>
+  <span><form action="search.aspx"><input type="text" name="txtkeyword" class="inputTop" placeholder="请输入关键字"><input type="submit" class="submitTop" value="搜 索"></form></span>
+</div>
+
+<script>
+    $('.topSearch').click(function () {
+        $('.searchTop').slideDown();
+    });
+
+    $('.searchTop a').click(function () {
+        $('.searchTop').hide();
+    });
+
+    $('.topUser i').mouseenter(function () {
+        $('.topUser span').slideDown();
+    });
+
+    $('.icoTopUser').mouseleave(function () {
+        $('.topUser span').hide();
+    });
+</script>
+<script>
+$('.topSearch').click(function () {
+    $('.searchTop').slideDown();
+});
+</script>
+
+        
+ <div class="bannerBox">
+  <div class="banner" id="banner">
+    <div class="swiper-wrapper">
+       <div class="swiper-slide"><a href="http://www.fjsdsrmyy.com/dj_list.aspx?ctlgid=326325"><img src="images/show1.jpg"></a></div>
+        <div class="swiper-slide"><a href="http://www.fjsdsrmyy.com/yw_list.aspx?ctlgid=645282"><img src="images/show2.jpg"></a></div>
+    </div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+    <div class="swiper-button-next swiper-button-white"></div>
+  </div>
+  <div class="swiper-pagination" id="bannerIco"></div> 
+</div>
+
+<div class="bannerM">
+  <div class="swiper-wrapper">
+     <div class="swiper-slide"><a href="http://www.fjsdsrmyy.com/yw_list.aspx?ctlgid=645282"><img src="images/202211080841486769.jpg"></a></div>
+      <div class="swiper-slide"><img src="/upload/News/202211301732359351.jpg"></div><div class="swiper-slide"><img src="images/202011050855200561.jpg"></div><div class="swiper-slide"><img src="/upload/News/202001191111374056.jpg"></div>
+  </div>
+  <div class="swiper-pagination" id="bannerIcoM"></div>
+</div>
+
+<div class="indexIco">
+  <div>
+    <a href="yy.aspx"><img src="images/icoIndex6.png"><i>预约挂号</i></a>
+    <a href="Worksheet.aspx"><img src="images/icoIndex1.png"><i>门诊排班</i></a> 
+    <a href="jz.aspx"><img src="images/icoIndex2.png"><i>就诊须知</i></a>
+    <a href="jz_jzlc.aspx"><img src="images/icoIndex3.png"><i>就诊流程</i></a>
+    <a href="about_jtwz.aspx"><img src="images/icoIndex4.png"><i>交通位置</i></a>
+  </div>
+</div>
+
+
+
+<div class="indexNews">
+  <!------------------notice--------------------->
+
+  <!------------------notice--------------------->
+</div>
+ 
+<!------------------ks--------------------->
+<div class="indKs">
+  <div class="indKs1">
+    <a href="ks.aspx"><img src="images/imgNavKs.png" class="imgNavPc"></a>
+    <a href="ks.aspx"><img src="images/imgNavKsM.png" class="imgNavM"></a>
+    <div class="indKsList">
+    <a href="showks.aspx?id=75" ><img src="images//img20200401114329.png" class="icoKs"><img src="images//img20200401114329.png" class="icoKsOn"><i>国医堂</i> </a>
+        <a href="showks.aspx?id=76" ><img src="images//img20200402101816.png" class="icoKs"><img src="images//img20200402101816.png" class="icoKsOn"><i>治未病科</i> </a>
+        <a href="showks.aspx?id=88" ><img src="images//img20200401115506.png" class="icoKs"><img src="images//img20200401115506.png" class="icoKsOn"><i>脑病科</i> </a>
+        <a href="showks.aspx?id=86" ><img src="images//img20200402102127.png" class="icoKs"><img src="images//img20200402102127.png" class="icoKsOn"><i>肺病科</i> </a>
+        <a href="showks.aspx?id=85" ><img src="images//img20200401115216.png" class="icoKs"><img src="images//img20200401115216.png" class="icoKsOn"><i>心血管科</i> </a>
+        <a href="showks.aspx?id=80" ><img src="images//img20200401115622.png" class="icoKs"><img src="images//img20200401115622.png" class="icoKsOn"><i>脾胃病科</i> </a>
+        <a href="showks.aspx?id=81" ><img src="images//img20200401115542.png" class="icoKs"><img src="images//img20200401115542.png" class="icoKsOn"><i>肾病科(含血透室)</i> </a>
+        <a href="showks.aspx?id=107" ><img src="images//img20200415115356.png" class="icoKs"><img src="images//img20200415115356.png" class="icoKsOn"><i>肝胆科</i> </a>
+        <a href="showks.aspx?id=79" ><img src="images//img20200401115047.png" class="icoKs"><img src="images//img20200401115047.png" class="icoKsOn"><i>内分泌科</i> </a>
+        <a href="showks.aspx?id=89" ><img src="images//img20200401115647.png" class="icoKs"><img src="images//img20200401115647.png" class="icoKsOn"><i>肿瘤科</i> </a>
+        <a href="showks.aspx?id=108" ><img src="images//img20210804045056.png" class="icoKs"><img src="images//img20210804045056.png" class="icoKsOn"><i>血液科</i> </a>
+        <a href="showks.aspx?id=94" ><img src="images//img20200402101942.png" class="icoKs"><img src="images//img20200402101942.png" class="icoKsOn"><i>急诊科</i> </a>
+    </div>
+  </div>
+</div>
+<!------------------ks--------------------->
+
+<!------------------doc--------------------->
+<div class="indDoc">
+  <a href="zj.aspx"><img src="images/imgNavZj.png" class="imgNavPc"></a>
+  <a href="zj.aspx"><img src="images/imgNavZjM.png" class="imgNavM"></a>
+  <div class="indDocList">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?医生编号=2230105001'><span><img src="images/1590397067132.jpg"></span><h1><i>杜建</i>主任医师、教授、博士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅治中医内科各种疑难病及肿瘤的中药辅助治疗,对老年病研究尤深，有独特的治疗经验....</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?医生编号=2230105002'><span><img src="images/1589965009089.jpg"></span> <h1><i>陈立典</i>主任医师、教授、博士生导师<br>[ 国医堂 ]</h1><h2>擅长：主要从事脑卒中后认知和肢体运动功能障碍康复研究...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?医生编号=2230105003'><span><img src="images/1589965200973.png"></span><h1><i>李灿东</i>主任医师、教授、医学博士、博士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长内分泌代谢疾病、慢性胃病、肿瘤等杂病的中医诊治...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?医生编号=2230105004'><span><img src="images/1590397559307.jpg"></span><h1><i>王和鸣</i>主任医师、教授、博士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅治骨伤、筋伤、骨病、腰椎间盘突出症、骨质增生等...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?医生编号=2230105005'><span><img src="images/1586853295666.png"></span><h1><i>张喜奎</i>主任医师、教授、医学博士<br>[ 国医堂 ]</h1><h2>擅长：长期从事经方辨治疑难病研究，运用《伤寒论》辨治各类疾病,擅长治疗肾脏疾病、心脑血管病、脾胃病等疑难杂病...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?医生编号=2230105006'><span><img src="images/黄俊山.png"></span><h1><i>黄俊山</i>主任医师、教授、医学博士、博士生导师<br>[ 国医堂 ]</h1><h2>擅长： 擅长失眠、抑郁、头痛、头晕、神经衰弱、更年期、肿瘤、咳嗽、胃病、多汗、身痒等内科、男科、妇科、皮肤科中医疑...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?医生编号=2230105007'><span><img src="images/王苹.png"></span><h1><i>王苹</i>教授、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长诊治乳腺增生病、炎性乳房疾病、月经病、产后病（乳汁淤积、乳汁缺少、亚健康、抑郁症）及乳腺癌术后中医药辨治...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?医生编号=2230105008'><span><img src="images/施红.png"></span><h1><i>施红</i>教授，博士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长：糖尿病、高血压、高脂高粘血症、痛风、甲状腺疾病、甲减、红斑狼疮、硬皮病等疾病诊治。...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?医生编号=2230105009'><span><img src="images/1590397759014.jpg"></span><h1><i>陈锦芳</i>教授、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长：中医内科、妇科、儿科疾病的辨证施治，尤其在感冒发热、咳嗽、鼻咽炎、急慢性胃肠炎、慢性乙型肝炎、泌尿系统...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?医生编号=2230105010'><span><img src="images/1590396779149.jpg"></span><h1><i>吴水生</i>教授、博士后、博士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长各类肿瘤的中医药辅助治疗以及消化系统疾病，萎缩性胃炎、慢性肝炎等癌前病变逆转，过敏性鼻炎、荨麻疹、小儿哮...</h2></a></div>
+      <%--  <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/吴童.png"></span><h1><i>吴童</i>教授、医学博士、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长针药并用治疗中风、糖尿病、失眠、头痛、耳鸣、颈椎病、脊柱类疾病、各类痛证、痛风、风湿类疾病、痤疮、皮疹、...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/鲁玉辉.png"></span><h1><i>鲁玉辉</i>教授、医学博士、博士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长各种肾病、尿路感染、肠胃病、肝病、水肿、月经病、乳腺增生、发热、顽固性咳嗽、头痛、心悸眩晕、痤疮、荨麻疹...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/1590396907938.JPG"></span><h1><i>陈桂铭</i>主任医师<br>[ 国医堂 ]</h1><h2>擅长：擅长于中西医结合治疗：甲状腺、肝胆、肠胃疾病；中医治疗感冒、咳嗽、习惯性便秘、不寐症（失眠）、偏头痛、高血压...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/1590397129279.jpg"></span><h1><i>李楠</i>教授、 医学博士、 硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长颈椎病、腰腿痛、肩周炎、类风湿性关节炎、强直性脊柱炎、痛风等中医骨伤科常见病、多发病的诊治...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/金浪.png"></span><h1><i>金浪</i>主任医师、教授、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长失眠、多梦、忧郁等心身疾病，急慢性胃炎、胃溃疡、肠预激综合征等消化系统疾病的中医治疗；以及胆囊炎、肝胆结...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/邓月娥.png"></span><h1><i>邓月娥</i>教授<br>[ 国医堂 ]</h1><h2>擅长：擅长治疗月经病、带下病、产后病、更年期综合症、痤疮和亚健康状态治疗和调理...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/杨敏.png"></span><h1><i>杨敏</i>教授、医学博士、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅治胃肠疾病、月经不调、带下病、失眠、头晕、感冒、咳喘、咽炎、痤疮、湿疹，更年期疾病及体质虚弱等亚健康的中医...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/周建衡.png"></span><h1><i>周建衡</i>教授、医学硕士、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：中西医结合治疗胃炎、胃溃疡、胃肠道疾病调理；高血压、高尿酸、糖尿病及心脑血管疾病；难治性咳嗽、哮喘、感冒、鼻...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/1598942930324.jpg"></span><h1><i>陈少芳</i>教授、医学博士、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长于治疗消化疾病（胃、肠、肝、胆病），感冒、咳嗽，妇科月经不调、痛经、产后调理，肿瘤的中药辅助治疗等...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/1590397184710.jpg"></span><h1><i>梁文娜</i>教授、医学博士<br>[ 国医堂 ]</h1><h2>擅长：擅长：中医健康管理，消化系统疾病、妇科疾病、代谢内分泌疾病及其他常见病的中医诊疗...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/1589967254608.jpg"></span><h1><i>肖绍坚</i>主任医师、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：中西结合治疗心血管病、脾胃病、老年病及慢性病的中医体质调理。...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/1586834016596.jpg"></span><h1><i>林友宁</i>主任医师<br>[ 国医堂 ]</h1><h2>擅长：擅长：高血压、糖尿病及消化系统疾病的诊疗，尤其擅长于肝病的中西医结合治疗。...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/1610118364485.jpg"></span><h1><i>陈淑娇</i>主任医师、教授、医学博士、博士生导师<br>[ 国医堂 ]</h1><h2>擅长：应用中医健康管理技术，围绝经期综合征、内分泌代谢性、糖尿病、糖尿病前期、高血压、痛风、高脂血症、肾脏疾病、肿...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/周玉华.png"></span><h1><i>周玉华</i>主任医师<br>[ 国医堂 ]</h1><h2>擅长：      中西医结合治疗妇科炎症，月经失调，不孕症，妇科肿瘤，多囊卵巢综合症，子宫内膜异位症等，中医辨证治疗先兆...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=c1d4ad1d-2dad-4319-ad97-c46e991eb479'><span><img src="images/1670315229181.jpg"></span><h1><i>林华阳</i>主任医师、教授、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长：超声神经阻滞、针刀为主综合诊疗软组织损伤，针刀通脊整脊治杂病：疑难型颈椎病、肩周病、腰椎间盘突出症、...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/王海生.png"></span><h1><i>王海生</i>副教授<br>[ 国医堂 ]</h1><h2>擅长：擅长中西医结合治疗呼吸消化系统疾病、糖尿病、高血压、痛风等代谢类疾病、儿科疾病...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/郭明章.png"></span><h1><i>郭明章</i>副教授<br>[ 国医堂 ]</h1><h2>擅长：擅长治疗外感，咳喘，失眠及消化道等疾病...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/1590396980074.jpg"></span><h1><i>陈建</i>副教授、医学博士、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长慢性肠胃炎、咳喘、头痛、眩晕、失眠、冠心病、高血脂、痛风、心悸、水肿、泌尿系统感染，颈椎病、风湿性关节炎...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350127'><span><img src="images/1589963004278.jpg"></span><h1><i>谭春江</i>副教授、医学博士<br>[ 国医堂 ]</h1><h2>擅长：擅长中西医结合诊治高血压、冠心病、心力衰竭、脂血异常症、糖尿病、胃病，以及亚健康、更年期综合征和内科杂症的中...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/林海鸣.png"></span><h1><i>林海鸣</i>副教授、医学硕士<br>[ 国医堂 ]</h1><h2>擅长：擅长中西医结合诊治骨质疏松症等老年性疾病，颈椎病、高血压、月经不调、口腔溃疡、过敏性鼻炎及慢性胃病等病症的中...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/李奕祺.png"></span><h1><i>李奕祺</i>副教授、医学博士、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长失眠眩晕，四时感冒，胃肠疾病，心肺咳喘，过敏痒疹，慢性鼻炎，腰酸肾虚，月经紊乱，不孕不育，小儿咳喘，食欲...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350131'><span><img src="images/俞洁.png"></span><h1><i>俞洁</i>副教授、医学博士、硕士生导师<br>[ 国医堂 ]</h1><h2>擅长：内科（咳嗽，鼻炎，慢性胃炎，失眠），妇科（乳腺结节，月经不调，痛经，更年期综合征，多囊卵巢综合征），健康管理...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350132'><span><img src="images/1590397601265.jpg"></span><h1><i>张捷平</i>副教授<br>[ 国医堂 ]</h1><h2>擅长：擅长治疗糖尿病、高脂高粘血症、痛风、甲亢、甲减等疾病...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350133'><span><img src="images/1647571922305.png"></span><h1><i>周丽</i>副教授<br>[ 国医堂 ]</h1><h2>擅长：      从事中医临床工作近20年，任全国高等学校中医学基础课程联盟理事，福建省中医药学会第一届中医经典分会委员，...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350134'><span><img src="images/张明选.png"></span><h1><i>张明选</i>副教授<br>[ 国医堂 ]</h1><h2>擅长：擅长：1慢性炎症性疾病：感冒咳嗽、咽炎、鼻炎，气管炎及哮喘，痤疮，复发性口腔溃疡，慢性胃炎、胃溃疡，慢性结肠...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?'><span><img src="images/黄颖.png"></span><h1><i>黄颖</i>副教授<br>[ 国医堂 ]</h1><h2>擅长：擅治：感冒、咳嗽、咽炎、鼻炎等呼吸系统疾病，胃炎、腹泻、便秘等消化系统疾病，月经不调、痛经、带下病等妇科疾病...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350143'><span><img src="images/郑晨.png"></span><h1><i>郑晨</i>副教授、医学硕士<br>[ 国医堂 ]</h1><h2>擅长：擅长肿瘤放化疗及术后调理，失眠，痛风，妇科更年期等杂症。...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350139'><span><img src="images/李德森.png"></span><h1><i>李德森</i>副教授<br>[ 国医堂 ]</h1><h2>擅长：擅长针药结合治疗颈肩腰腿疼痛，中医脾胃相关疾病，中医肿瘤辨证论治，小儿体质虚弱、四时感冒、慢性病综合调理，妇...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350145'><span><img src="images/林信富.png"></span><h1><i>林信富</i>副教授、博士研究生<br>[ 国医堂 ]</h1><h2>擅长：擅长于治疗头痛头晕、失眠、心悸等心脑疾病及慢性胃病、肾病、糖尿病、哮喘等内科杂病...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=aa5a7a58-22f7-486c-8081-99c333f76146'><span><img src="images/1604389125858.jpg"></span><h1><i>江月斐</i>副教授，医学博士，硕士研究生导师<br>[ 国医堂 ]</h1><h2>擅长：擅长于治疗头痛头晕、失眠、心悸等心脑疾病及慢性胃病、肾病、糖尿病、哮喘等内科杂病...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350141'><span><img src="images/王虹.png"></span><h1><i>王虹</i>副主任医师<br>[ 国医堂 ]</h1><h2>擅长：擅长中医内科杂病的诊治，特别是对中医脾胃病的辨治疗效显著。对儿科、妇科、皮肤等疾病有较丰富的的临症经验。...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=f1b25e01-0a60-4a44-867a-523fc76f74b7'><span><img src="images/1608794760370.jpg"></span><h1><i>李灿东</i>校长、主任医师、教授、医学博士、博士生导师<br>[ 治未病科（中医健康管理中心） ]</h1><h2>擅长： 擅长：内分泌疾病、慢性胃病、肿瘤等杂病的中医药诊治。...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350153'><span><img src="images/1590396954024.jpg"></span><h1><i>杨朝阳</i>教授、医学博士、博士生导师<br>[ 治未病科（中医健康管理中心） ]</h1><h2>擅长：擅长内分泌、代谢性疾病、风湿性关节炎、慢性胃病、肿瘤的中医内科诊治。...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350154'><span><img src="images/1586854011552.JPG"></span><h1><i>陈淑娇</i>主任医师、教授、医学博士、博士生导师<br>[ 治未病科（中医健康管理中心） ]</h1><h2>擅长：应用中医健康管理技术，围绝经期综合征、内分泌代谢性、糖尿病、糖尿病前期、高血压、痛风、高脂血症、肾脏疾病、肿...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0ac50231'><span><img src="images/俞洁.png"></span><h1><i>俞洁</i>副教授、医学博士、硕士生导师<br>[ 治未病科（中医健康管理中心） ]</h1><h2>擅长：内科（咳嗽，鼻炎，慢性胃炎，失眠），妇科（乳腺结节，月经不调，痛经，更年期综合征，多囊卵巢综合征），健康管理...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350156'><span><img src="images/1590397255215.jpg"></span><h1><i>罗燕</i>副主任医师、副教授、医学博士<br>[ 治未病科（中医健康管理中心） ]</h1><h2>擅长：运用特色针灸疗法、药线点灸、穴位埋线、耳针、火针等外治疗法，治疗睡眠障碍、慢性胃炎、慢性鼻炎、偏头痛、三叉神...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350160'><span><img src="images/1591144523245.jpg"></span><h1><i>蔡华珠</i>副教授，医学博士、硕士生导师<br>[ 治未病科（中医健康管理中心） ]</h1><h2>擅长：擅长：中医健康管理（特别是依四时调理脾胃）、痛经的调治和饮食失常、脘腹不舒、便秘、泄泻及睡眠障碍、焦虑症等病...</h2></a></div>
+        <div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350167'><span><img src="images/1590396612381.jpg"></span><h1><i>吴强</i>教授、医学博士<br>[ 康复一科 ]</h1><h2>擅长：擅长：诊治儿童脑病（脑瘫、智障、自闭）、中风后偏瘫、颈肩腰腿疾病及经络调理。...</h2></a></div><div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=4bbb332d-2c77-4d03-8f94-0a350168'><span><img src="images/1590397583699.jpg"></span><h1><i>王芗斌</i>教授、医学博士、硕士生导师<br>[ 康复一科 ]</h1><h2>擅长：擅长：脑卒中、骨性关节炎，颈肩腰腿痛等神经、骨骼肌肉系统疾病的中西医结合康复；儿童及女性健康的体质调理及预防...</h2></a></div><div class="swiper-slide"><a target="_blank"  href='showdoc.aspx?Id=f7cbe2d9-7d40-430a-9a7e-056d585bb813'><span><img src="images/黄武松.png"></span><h1><i>黄武松</i>主任医师、硕士生导师<br>[ 体检科 ]</h1><h2>擅长：六批全国名中医继承人，师承全国名中医杜建。擅长高血压、冠心病、头晕头痛、中风、抑郁、焦虑等疾病的中西医结合治...</h2></a></div>
+    --%>
+
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination" id="docIco"></div> 
+  </div>
+  
+</div>
+<!------------------doc--------------------->
+
+<div class="indBox">
+   
+
+
+
+ 
+
+
+
+<script>
+//首页banner
+var banner = new Swiper('.banner', {
+	  loop:true,
+	  autoplay: {
+         delay: 4500,
+         disableOnInteraction:false,
+      },
+      pagination: {
+        el: '#bannerIco',
+		clickable :true,
+      },
+	  navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+});
+//首页bannerM
+var bannerM = new Swiper('.bannerM', {
+	  loop:true,
+	  autoplay: {
+         delay: 3000,
+         disableOnInteraction:false,
+      },
+      pagination: {
+        el: '#bannerIcoM',
+      }
+});
+
+$('.indexNewsNav a').click(function(){
+	$(this).siblings().removeClass('on');
+	$(this).addClass('on');
+	$('.indexNewsList').hide();
+	$('.indexNewsList').eq($(this).index()).show();
+});
+
+$('.indexNoticeNav span a').click(function(){
+	$(this).siblings().removeClass('on');
+	$(this).addClass('on');
+	$('.boxNotice').hide();
+	$('.boxNotice').eq($(this).index()).show();
+});
+
+if($(window).width() >768){
+  var indDocList = new Swiper('.indDocList', {
+		loop:false,
+		spaceBetween:10,
+		slidesPerView:5,
+		slidesPerGroup:5,
+		slidesPerColumn:1,
+		pagination: {
+		  el: '#docIco',
+		  clickable :true,
+		},
+		navigation: {
+		  nextEl: '.swiper-button-next',
+		  prevEl: '.swiper-button-prev',
+		},
+  });
+
+}else{
+  var indDocList = new Swiper('.indDocList', {
+		loop:false,
+		spaceBetween:0,
+		slidesPerView:1,
+		slidesPerColumn:5,
+		pagination: {
+		  el: '#docIco',
+		  clickable :true,
+		},
+		navigation: {
+		  nextEl: '.swiper-button-next',
+		  prevEl: '.swiper-button-prev',
+		},
+  });
+
+};
+
+$('.indDocList').mouseenter(function(){
+	indDocList.autoplay.stop();
+});
+$('.indDocList').mouseleave(function(){
+	indDocList.autoplay.start();
+});
+
+$('body').css('background','url(images/bg.jpg)');
+</script>
+
+  
+
+  
+<div class="rightNav">
+  <a href="yy.aspx"><img src="images/icoQuitNav6.png" /><div>预约挂号</div></a>
+  <a href="Worksheet.aspx"><img src="images/icoQuitNav1.png" /><div>门诊排班</div></a>
+  <a href="jz.aspx"><img src="images/icoQuitNav2.png" /><div>就诊须知</div></a>
+  <a href="jz_jzlc.aspx"><img src="images/icoQuitNav3.png" /><div>就诊流程</div></a>
+  <a href="about_jtwz.aspx"><img src="images/icoQuitNav4.png" /><div>交通位置</div></a>
+  <a href="javascript:void(0)" class="toTop"><img src="images/icoQuitNav5.png" /><div>返回顶部</div></a>
+</div>
+
+<a href="javascript:void(0)" class="toTopM"></a>
+
+</div>
+<script>
+    //滚动到顶部------------------------
+    $('.toTop,.toTopM').click(function () {
+        $('html,body').animate({ scrollTop: 0 }, 300);
+    });
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= 300) {
+            $('.toTop').css('display', 'block');
+            if ($(window).width() <= 768) {
+                $('.toTopM').show();
+            }
+        }
+        else {
+            $('.toTop').css('display', 'none');
+            $('.toTopM').hide();
+        }
+    });
+    //滚动到顶部------------------------
+</script>
+
+<script>
+    $(function () {
+
+        function attrMeta() {
+            if ($(window).width() >= 768) {
+                $('meta[name=viewport]').attr('content', 'width=1320,user-scalable=no');
+            }
+            else {
+                $('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no')
+            }
+        };
+        attrMeta();
+        $(window).resize(function () {
+            attrMeta();
+        });
+
+
+        document.body.addEventListener('touchstart', function () { });
+
+        //pc导航----------------------
+        var navOnIndex = $('.boxNav .on').parent('li').index();
+
+        $('.boxNav span').mouseenter(function () {
+            $('.boxNav div').hide();
+            $(this).siblings('div').slideDown();
+            $('.boxNav span').removeClass('on');
+            $(this).addClass('on');
+        });
+
+        $('.boxNav div').mouseleave(function () {
+            $(this).hide();
+            $('.boxNav span').removeClass('on');
+            $('.boxNav li').eq(navOnIndex).find('span').addClass('on');
+        });
+
+        $('.boxNav').mouseleave(function () {
+            $('.boxNav div').hide();
+            $('.boxNav span').removeClass('on');
+            $('.boxNav li').eq(navOnIndex).find('span').addClass('on');
+        });
+
+
+
+        var subNavOnIndex = $('.subNav .on').index();
+        $('.subNav a').mouseenter(function () {
+            $('.subNav a').removeClass('on');
+            $(this).addClass('on');
+        });
+        $('.subNav').mouseleave(function () {
+            $('.subNav a').removeClass('on');
+            $('.subNav a').eq(subNavOnIndex).addClass('on');
+            if (subNavOnIndex == -1) { $('.subNav a').removeClass('on'); }
+        });
+        //pc导航----------------------
+
+        //手机导航----------------------
+        $('#menuM').click(function () {
+            if ($(this).attr('class') == 'openMenu') {
+                $(this).attr('class', 'closeMenu');
+                $('#boxAll,.boxTopM').animate({ left: '-75%' }, 200);
+                $('.icoTopUser').animate({ right: '100%' }, 200);
+                $('.navTopM').animate({ left: '25%' }, 200);
+            }
+            else {
+                $(this).attr('class', 'openMenu');
+                $('#boxAll,.boxTopM').animate({ left: '0' }, 200);
+                $('.icoTopUser').animate({ right: '50px' }, 200);
+                $('.navTopM').animate({ left: '100%' }, 200);
+            }
+        }); 
+
+ 
+
+        $('.boxNavM i').click(function () {
+            if ($(this).attr('class') != 'on') {
+                $('.boxNavM i').attr('class', '');
+                $(this).attr('class', 'on');
+                $('.boxNavM div').hide();
+                $(this).parent().siblings('div').slideDown('slow');
+            }
+            else {
+                $(this).attr('class', '');
+                $('.boxNavM div').hide();
+            }
+
+        });
+
+
+        var webUrl = window.location.href;
+
+        $('.boxNavM div a').each(function () {
+            thisurl = $(this).attr('href');
+            if (webUrl.indexOf(thisurl) != -1) {
+                $(this).attr('class', 'on');
+                $(this).parent('div').show();
+                $(this).parents('li').find('i').attr('class', 'on');
+            }
+        });
+
+        //if(webUrl.indexOf('about_ths') != -1||webUrl.indexOf('about_vi') != -1||webUrl.indexOf('about_jyln') != -1){
+        //	$('.boxNavM li:eq(1)').find('i').attr('class','on');
+        //	$('.boxNavM li:eq(1)').find('div').show();
+        //	$('.boxNavM li:eq(1)').find('div a:eq(2)').attr('class','on');
+        //}
+
+        //手机导航---------------------
+
+    });
+</script>
+
+
+
+        <div>
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+ 
+</body>
+</html>

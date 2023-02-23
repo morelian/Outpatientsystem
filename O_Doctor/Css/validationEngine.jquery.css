@@ -1,0 +1,22 @@
+
+
+
+/* Z-INDEX */
+.formError {z-index:990;}
+
+.formError {width:100%; position:absolute; top:0; left:0!important}
+
+.formError .formErrorContent{
+    background: #fda41f;
+	position:absolute;
+	color: #fff;
+	font-size:11px;
+	line-height:14px;
+	border-radius:3px;
+	top:9px!important;
+	right:9px!important;
+	padding:3px;
+}
+
+
+

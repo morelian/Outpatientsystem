@@ -1,0 +1,604 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DoctorMaster.Master.cs" Inherits="Outpatientsystem.Doctor" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+        <script src="Scripts/vue.js"></script>
+    <script src="Scripts/vue.min.js"></script>
+    <script src="Scripts/vue.global.js"></script>
+    <link href="Css/animate.css" rel="stylesheet" />
+    <link href="Css/validationEngine.jquery.css" rel="stylesheet" />
+    <link href="Css/css.css" rel="stylesheet" />
+    <script src="Css/jquery-3.2.1.min.js"></script>
+    <script src="Css/jquery.validationEngine-zh_CN.js"></script>
+    <script src="Css/jquery.validationEngine.min.js"></script>
+    <link href="Css/mCss.css" rel="stylesheet" />
+    <link href="Css/swiper-4.5.0.min.css" rel="stylesheet" />
+    <script src="Css/swiper-4.5.0.min.js"></script> 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+             <div class="navTopM">
+    <div class="boxNavM">
+      <ul>
+        <li>
+          <span><a href="index.aspx">首页</a></span>
+        </li>
+        <li>
+          <span><i></i><a href="about.aspx">概况</a></span>
+          <div>
+            <a href="about_yyjj.aspx">医院简介</a>
+            <a href="about_yyxw.aspx">医院动态</a>
+            <a href="about_zzjg.aspx">组织架构</a>
+          </div>
+        </li>
+
+
+        <li>
+          <span><i></i><a href="jz.aspx"><img src="images/imgNav4.png" class="imgNav"><img src="images/imgNav4Hover.png" class="imgNavOn"></a></span>
+          <div class="padding3">
+            <a href="yy.aspx">预约挂号</a>
+            <a href="Worksheet.aspx">门诊排班</a>
+            <a href="jz.aspx">就诊须知</a>
+            <a href="jz_jzlc.aspx">就诊流程</a>
+            <a href="about_jtwz.aspx">交通位置</a>
+          </div>
+         </li>
+         <li>
+          <span><i></i><a href="ks.aspx"><img src="images/imgNav5.png" class="imgNav"><img src="images/imgNav5Hover.png" class="imgNavOn"></a></span>
+          <div class="padding4">
+                <a href="showks.aspx?id=75" >国医堂</a>
+              <a href="showks.aspx?id=76" >治未病科（中医健康管理中心）</a>
+              <a href="showks.aspx?id=88" >脑病科</a>
+              <a href="showks.aspx?id=86" >肺病科</a>
+              <a href="showks.aspx?id=85" >心血管科</a>
+              <a href="showks.aspx?id=80" >脾胃病科</a>
+              <a href="showks.aspx?id=81" >肾病科(含血透室)</a>
+              <a href="showks.aspx?id=107" >肝胆科</a>
+              <a href="showks.aspx?id=79" >内分泌科</a>
+              <a href="showks.aspx?id=89" >肿瘤科</a>
+              <a href="showks.aspx?id=108" >血液科</a>
+              <a href="showks.aspx?id=94" >急诊科</a>
+              <a href="showks.aspx?id=87" >重症医学科</a>
+              <a href="showks.aspx?id=90" >外一科（普外科）</a>
+              <a href="showks.aspx?id=93" >外二科（泌尿外科）</a>
+              <a href="showks.aspx?id=109" >肛肠科</a>
+              <a href="showks.aspx?id=92" >耳鼻咽喉科</a>
+              <a href="showks.aspx?id=111" >骨伤一科</a>
+              <a href="showks.aspx?id=98" >眼科</a>
+              <a href="showks.aspx?id=97" >口腔科</a>
+              <a href="showks.aspx?id=96" >皮肤科</a>
+              <a href="showks.aspx?id=77" >康复一科</a>
+              <a href="showks.aspx?id=83" >针灸科</a>
+              <a href="showks.aspx?id=84" >国医堂针推</a>
+              <a href="showks.aspx?id=91" >妇科</a>
+              <a href="showks.aspx?id=95" >儿科</a>
+              <a href="showks.aspx?id=104" >体检科</a>
+             </div>
+        </li>
+        <li>
+          <span><i></i><a href="zj.aspx"><img src="images/imgNav6.png" class="imgNav"><img src="images/imgNav6Hover.png" class="imgNavOn"></a></span>
+          <div class="padding5">
+            <a href="zj.aspx">专家介绍</a>
+            <a href="Worksheet.aspx">门诊排班</a>
+            <a href="zj_yscx.aspx">医生查询</a>
+          </div>
+        </li>
+        <li>
+          <span><i></i><a href="yzxx.aspx"><img src="images/imgNav11.png" class="imgNav"><img src="images/imgNav11Hover.png" class="imgNavOn"></a></span>
+          <div class="padding9">
+             <a href="lxwm.aspx">联系我们</a>
+              <a href="personal.aspx">个人信息</a>
+          </div>
+        </li>
+      </ul>
+   </div>
+   <div class="searchTopM"><form action="search.aspx"><input type="text" name="txtkeyword" class="inputSearchM" placeholder="请输入关键字"><input type="submit" class="subimtSearchM" value=""></form></div>
+
+</div>
+
+<div id="boxAll" style="position:relative">
+
+   <div class="icoTopUser">
+  <div class="btnTopUser">
+    <a href="login.aspx">登录</a>
+    <a href="reg.aspx">注册</a>
+  </div>
+  </div>
+  
+<!--m-->
+<div class="boxTopM">
+  <a href="index.aspx"><img src="images/logo.png" class="logoM"></a>
+  <a href="javascript:void(0)" class="openMenu" id="menuM"></a>
+</div>
+<!--m-->
+
+<div class="boxTop">
+  <div class="boxTop1">
+    <a href="index.aspx"><img src="images/logo.png" class="logo"></a>
+    <a href="javascript:void(0)" class="openNav" id="btnTop"></a>
+    <div class="boxNav">
+      <ul>
+        <li>
+          <span class="on"><i></i><a href="index.aspx"><img src="images/imgNav1.png" class="imgNav"><img src="images/imgNav1Hover.png" class="imgNavOn"></a></span>
+        </li>
+        <li>
+          <span><i></i><a href="about.aspx"><img src="images/imgNav2.png" class="imgNav"><img src="images/imgNav2Hover.png" class="imgNavOn"></a></span>
+          <div class="padding1">
+            <a href="about_yyjj.aspx">医院简介</a>
+            <a href="about_yyxw.aspx">医院动态</a>
+            <!--<a href="about_jtwz.aspx">交通位置</a>-->
+            <a href="about_zzjg.aspx">组织架构</a>
+            <a href="about_ldxx.aspx">领导信息</a>
+            <a href="about_yywh.aspx">医院文化</a>
+          </div>
+        </li>
+        <li>
+          <span><i></i><a href="dj.aspx"><img src="images/imgNav3.png" class="imgNav"><img src="images/imgNav3Hover.png" class="imgNavOn"></a></span>
+          <div class="padding2">
+            <a href="dj_list.aspx?ctlgid=326325">聚焦二十大</a>
+            <a href="dj_news.aspx">党建新闻</a>
+             <a href="dj_list.aspx?ctlgid=187572">纪检监察</a>
+             <a href="dj_list.aspx?ctlgid=682316">思政焦点</a>
+             <a href="dj_list.aspx?ctlgid=353868">文明创建</a>
+            <a href="dj_tyzj.aspx">团员之家</a>
+          </div>
+        </li>
+        <li>
+          <span><i></i><a href="jz.aspx"><img src="images/imgNav4.png" class="imgNav"><img src="images/imgNav4Hover.png" class="imgNavOn"></a></span>
+          <div class="padding3">
+            <a href="yy.aspx">预约挂号</a>
+            <a href="Worksheet.aspx">门诊排班</a>
+            <a href="jz.aspx">就诊须知</a>
+            <a href="jz_jzlc.aspx">就诊流程</a>
+            <a href="about_jtwz.aspx">交通位置</a>
+          </div>
+         </li>
+         <li>
+          <span><i></i><a href="ks.aspx"><img src="images/imgNav5.png" class="imgNav"><img src="images/imgNav5Hover.png" class="imgNavOn"></a></span>
+          <div class="padding4">
+              <a href="showks.aspx?id=75" >国医堂</a><a href="showks.aspx?id=76" >治未病科（中医健康管理中心）</a><a href="showks.aspx?id=88" >脑病科</a><a href="showks.aspx?id=86" >肺病科</a><a href="showks.aspx?id=85" >心血管科</a><a href="showks.aspx?id=80" >脾胃病科</a><a href="showks.aspx?id=81" >肾病科(含血透室)</a><a href="showks.aspx?id=107" >肝胆科</a><a href="showks.aspx?id=79" >内分泌科</a><a href="showks.aspx?id=89" >肿瘤科</a><a href="showks.aspx?id=108" >血液科</a><a href="showks.aspx?id=78" >老年病科</a><a href="showks.aspx?id=99" >不孕不育科</a><a href="showks.aspx?id=94" >急诊科</a><a href="showks.aspx?id=87" >重症医学科</a><a href="showks.aspx?id=90" >外一科（普外科）</a><a href="showks.aspx?id=93" >外二科（泌尿外科）</a><a href="showks.aspx?id=109" >肛肠科</a><a href="showks.aspx?id=92" >耳鼻咽喉科</a><a href="showks.aspx?id=111" >骨伤一科</a><a href="showks.aspx?id=82" >骨伤二科</a><a href="showks.aspx?id=98" >眼科</a><a href="showks.aspx?id=97" >口腔科</a><a href="showks.aspx?id=96" >皮肤科</a><a href="showks.aspx?id=77" >康复一科</a><a href="showks.aspx?id=112" >康复二科</a><a href="showks.aspx?id=83" >针灸科</a><a href="showks.aspx?id=84" >国医堂针推</a><a href="showks.aspx?id=106" >推拿科</a><a href="showks.aspx?id=101" >乳腺科</a><a href="showks.aspx?id=91" >妇科</a><a href="showks.aspx?id=95" >儿科</a><a href="showks.aspx?id=104" >体检科</a><a href="showks.aspx?id=120" >针刀门诊</a><a href="showks.aspx?id=119" >新冠中医预防与康复门诊</a><a href="showks.aspx?id=121" >男科门诊</a>
+          </div>
+        </li>
+        <li>
+          <span><i></i><a href="zj.aspx"><img src="images/imgNav6.png" class="imgNav"><img src="images/imgNav6Hover.png" class="imgNavOn"></a></span>
+          <div class="padding5">
+            <a href="zj.aspx">专家介绍</a>
+            <a href="Worksheet.aspx">门诊排班</a>
+            <a href="zj_yscx.aspx">医生查询</a>
+          </div>
+        </li>
+        <li>
+          <span><i></i><a href="yw.aspx"><img src="images/imgNav7.png" class="imgNav"><img src="images/imgNav7Hover.png" class="imgNavOn"></a></span>
+          <div class="padding6">
+            <a href="yw_news.aspx">医政动态</a>
+            <a href="yw_list.aspx">科研教育</a>
+            <a href="yw_list.aspx?ctlgid=645282">老年友善</a>
+          </div>
+        </li>
+        <li>
+          <span><i></i><a href="hl.aspx"><img src="images/imgNav8.png" class="imgNav"><img src="images/imgNav8Hover.png" class="imgNavOn"></a></span>
+          <div class="padding7">
+            <a href="hl.aspx">护士风采</a>
+            <a href="hl.aspx?ctlgid=423868">护理服务</a>
+          </div>
+        </li>
+        <li>
+          <span><i></i><a href="ywgg.aspx"><img src="images/imgNav9.png" class="imgNav"><img src="images/imgNav9Hover.png" class="imgNavOn"></a></span>
+          <div class="padding8">
+            <a href="ywgg.aspx?ctlgid=877158">规章制度</a>
+            <a href="ywgg.aspx">院务公告</a>
+            <a href="http://zp.fjsdsrmyy.com/tzgg.aspx">人才招聘</a>
+            <a href="ywgg.aspx?ctlgid=543275">其他公告</a>
+          </div>
+        </li>
+        <li>
+          <span><i></i><a href="zg.aspx"><img src="images/imgNav10.png" class="imgNav"><img src="images/imgNav10Hover.png" class="imgNavOn"></a></span>
+          <div class="padding9">
+            <a href="zg.aspx">工会活动</a>
+            <a href="zg_list.aspx">政策法规</a>
+          </div>
+        </li>
+        <li>
+          <span><i></i><a href="yzxx.aspx"><img src="images/imgNav11.png" class="imgNav"><img src="images/imgNav11Hover.png" class="imgNavOn"></a></span>
+          <div class="padding9">
+             <a href="sjxx.aspx">书记信箱</a>
+             <a href="yzxx.aspx">院长信箱</a>
+             <a href="lxwm.aspx">联系我们</a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+    <div class="icoTop">
+      <a href="javascript:void(0)" class="topSearch"><i></i></a>
+    </div>
+  </div>
+</div>
+
+<div class="searchTop">
+  <a href="javascript:void(0)"></a>
+  <span><form action="search.aspx"><input type="text" name="txtkeyword" class="inputTop" placeholder="请输入关键字"><input type="submit" class="submitTop" value="搜 索"></form></span>
+</div>
+
+<script>
+    $('.topSearch').click(function () {
+        $('.searchTop').slideDown();
+    });
+
+    $('.searchTop a').click(function () {
+        $('.searchTop').hide();
+    });
+
+    $('.topUser i').mouseenter(function () {
+        $('.topUser span').slideDown();
+    });
+
+    $('.icoTopUser').mouseleave(function () {
+        $('.topUser span').hide();
+    });
+</script>
+<script>
+$('.topSearch').click(function () {
+    $('.searchTop').slideDown();
+});
+</script>
+
+        
+   <script>
+       $('.boxNav li span').attr('class', '');
+       $('.boxNav li:eq(4) span').attr('class', 'on');
+</script>
+<div class="subBanner" style="background:url(images/subBanner.jpg) center no-repeat;"></div>
+<div class="subNavBox">
+
+ 
+</div>
+<div class="curNav">当前位置：<a href="index.aspx">首页</a><a href="jz.aspx">就诊</a><a href="javascript:void(0)">预约挂号</a></div>
+<div class="navTitle"><span><h1><i>预约挂号</i></h1></span></div>
+<div class="box">
+  <div class="boxTL"></div><div class="boxTR"></div><div class="boxBL"></div><div class="boxBR"></div>
+  <div class="padding129">
+    <div class="navTitle">预约挂号</div>
+    <div class="icoYy">
+
+      <a href="javascript:void(0)" class="btnYy_wx"><img src="images/icoYy2.png"><i>微信预约</i></a>
+      <a href="Worksheet.aspx"><img src="images/icoYy3.png"><i>网站预约</i></a>
+    </div>
+  </div>
+</div>
+
+ 
+
+<!--------------------------微信预约-------------------------->
+<div class="boxTcBg"  id="boxYy_wx"><div class="boxTcLine"></div><div class="boxTc">
+  <a href="javascript:void(0)" class="btnCloseTc"><i></i></a>
+  <div class="navTc">微信预约</div> 
+  <div class="boxTcMain">
+     <div class="yyCon">
+        <h3><img src="images/imgwxyy.png"><br>扫码预约</h3>
+    </div>
+  </div>
+ </div></div>
+<!--------------------------微信预约-------------------------->
+
+<script>
+    $('.btnYy_tel').click(function () {
+        $('#boxYy_tel').show();
+    })
+    $('.btnYy_wx').click(function () {
+        $('#boxYy_wx').show();
+    })
+    $('.btnCloseTc').click(function () {
+        $('.boxTcBg').hide();
+    })
+
+</script>
+
+
+  
+<div class="boxFoot">
+  <div class="boxFoot1">
+      <div class="boxFoot4"><script type="text/javascript">document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/14/000/0000/60404545/CA140000000604045450004.js' type='text/javascript'%3E%3C/script%3E"));</script></div>
+      <div class="boxFoot2">
+        <i>版权所有：福建省第三人民医院 ©2023</i>
+        <i><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">闽ICP备16014532号-1</a></i>
+        <i><a href="http://www.fjhxtc.com" target="_blank">网站建设：海西天成</a></i>
+      </div>
+      <div class="boxFoot3">
+        <i>网站导航</i> 
+        <select name="sel1"  onchange='if(this.selectedIndex>0){ window.open(this.options[this.selectedIndex].value);}'>
+          <option>上级单位</option>
+            <option value="http://www.nhc.gov.cn/">中华人民共和国国家卫生健康委员会 </option>
+<option value="http://www.satcm.gov.cn">国家中医药管理局</option>
+<option value="http://wjw.fujian.gov.cn/">福建省卫生健康委员会</option>
+<option value="http://ybj.fujian.gov.cn">福建省医疗保障局</option>
+<option value="http://fjdj.fjsen.com/">福建机关党建网</option>
+<option value="http://www.fjtcm.edu.cn">福建中医药大学</option>
+
+        </select>
+          <select name="sel2"  onchange='if(this.selectedIndex>0){ window.open(this.options[this.selectedIndex].value);}'>
+          <option>其他单位</option>
+            <option value="http://www.srmyy.com">福建省人民医院</option>
+<option value="http://www.fjhospital.com">福建省第二人民医院</option>
+<option value="http://www.fjkf.net">福建中医药大学附属康复医院</option>
+<option value="http://www.fjgyt.cn">五四路国医堂</option>
+
+        </select>
+      </div>
+  </div>
+</div>
+  
+<div class="rightNav">
+  <a href="yy.aspx"><img src="images/icoQuitNav6.png" /><div>预约挂号</div></a>
+  <a href="Worksheet.aspx"><img src="images/icoQuitNav1.png" /><div>门诊排班</div></a>
+  <a href="jz.aspx"><img src="images/icoQuitNav2.png" /><div>就诊须知</div></a>
+  <a href="jz_jzlc.aspx"><img src="images/icoQuitNav3.png" /><div>就诊流程</div></a>
+  <a href="about_jtwz.aspx"><img src="images/icoQuitNav4.png" /><div>交通位置</div></a>
+  <a href="javascript:void(0)" class="toTop"><img src="images/icoQuitNav5.png" /><div>返回顶部</div></a>
+</div>
+
+<a href="javascript:void(0)" class="toTopM"></a>
+
+</div>
+<script>
+    //滚动到顶部------------------------
+    $('.toTop,.toTopM').click(function () {
+        $('html,body').animate({ scrollTop: 0 }, 300);
+    });
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= 300) {
+            $('.toTop').css('display', 'block');
+            if ($(window).width() <= 768) {
+                $('.toTopM').show();
+            }
+        }
+        else {
+            $('.toTop').css('display', 'none');
+            $('.toTopM').hide();
+        }
+    });
+    //滚动到顶部------------------------
+</script>
+
+<script>
+    $(function () {
+
+        function attrMeta() {
+            if ($(window).width() >= 768) {
+                $('meta[name=viewport]').attr('content', 'width=1320,user-scalable=no');
+            }
+            else {
+                $('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no')
+            }
+        };
+        attrMeta();
+        $(window).resize(function () {
+            attrMeta();
+        });
+
+
+        document.body.addEventListener('touchstart', function () { });
+
+        //pc导航----------------------
+        var navOnIndex = $('.boxNav .on').parent('li').index();
+
+        $('.boxNav span').mouseenter(function () {
+            $('.boxNav div').hide();
+            $(this).siblings('div').slideDown();
+            $('.boxNav span').removeClass('on');
+            $(this).addClass('on');
+        });
+
+        $('.boxNav div').mouseleave(function () {
+            $(this).hide();
+            $('.boxNav span').removeClass('on');
+            $('.boxNav li').eq(navOnIndex).find('span').addClass('on');
+        });
+
+        $('.boxNav').mouseleave(function () {
+            $('.boxNav div').hide();
+            $('.boxNav span').removeClass('on');
+            $('.boxNav li').eq(navOnIndex).find('span').addClass('on');
+        });
+
+
+
+        var subNavOnIndex = $('.subNav .on').index();
+        $('.subNav a').mouseenter(function () {
+            $('.subNav a').removeClass('on');
+            $(this).addClass('on');
+        });
+        $('.subNav').mouseleave(function () {
+            $('.subNav a').removeClass('on');
+            $('.subNav a').eq(subNavOnIndex).addClass('on');
+            if (subNavOnIndex == -1) { $('.subNav a').removeClass('on'); }
+        });
+        //pc导航----------------------
+
+        //手机导航----------------------
+        $('#menuM').click(function () {
+            if ($(this).attr('class') == 'openMenu') {
+                $(this).attr('class', 'closeMenu');
+                $('#boxAll,.boxTopM').animate({ left: '-75%' }, 200);
+                $('.icoTopUser').animate({ right: '100%' }, 200);
+                $('.navTopM').animate({ left: '25%' }, 200);
+            }
+            else {
+                $(this).attr('class', 'openMenu');
+                $('#boxAll,.boxTopM').animate({ left: '0' }, 200);
+                $('.icoTopUser').animate({ right: '50px' }, 200);
+                $('.navTopM').animate({ left: '100%' }, 200);
+            }
+        }); 
+
+ 
+
+        $('.boxNavM i').click(function () {
+            if ($(this).attr('class') != 'on') {
+                $('.boxNavM i').attr('class', '');
+                $(this).attr('class', 'on');
+                $('.boxNavM div').hide();
+                $(this).parent().siblings('div').slideDown('slow');
+            }
+            else {
+                $(this).attr('class', '');
+                $('.boxNavM div').hide();
+            }
+
+        });
+
+
+        var webUrl = window.location.href;
+
+        $('.boxNavM div a').each(function () {
+            thisurl = $(this).attr('href');
+            if (webUrl.indexOf(thisurl) != -1) {
+                $(this).attr('class', 'on');
+                $(this).parent('div').show();
+                $(this).parents('li').find('i').attr('class', 'on');
+            }
+        });
+
+        //if(webUrl.indexOf('about_ths') != -1||webUrl.indexOf('about_vi') != -1||webUrl.indexOf('about_jyln') != -1){
+        //	$('.boxNavM li:eq(1)').find('i').attr('class','on');
+        //	$('.boxNavM li:eq(1)').find('div').show();
+        //	$('.boxNavM li:eq(1)').find('div a:eq(2)').attr('class','on');
+        //}
+
+        //手机导航---------------------
+
+    });
+</script>
+
+
+<!-------------------------- 医生弹窗-------------------------->
+<!--<div class="boxTc" id="boxDoc">
+  <div class="docTc">
+    <a href="javascript:void(0)" class="btnCloseTc" id="closeDoc"><i></i></a>
+    <img src="images/imgDocShow.jpg" class="docPic">
+    <div class="docBox">
+      <div class="docNav"><span><i>杜建</i>教授、主任医师、博士生导师</span>中医内科</div>
+      <div class="docCon">
+         福建中医学院原院长，教授，主任医师，博士生导师，博士后合作导师，享受国务院特殊津贴专家，获福建省优秀专家称号，全国第三、四批名老中医药专家学术经验继承指导老师。2017年，荣膺首届“全国名中医”称号。杜建教授从事中医临床、教学和科研工作50余年，取得了丰硕的成果。擅治中医内科各种疑难病及肿瘤的中药辅助治疗，对老年病研究尤深，有独特的治疗经验擅治中医内科各种疑难病及肿瘤的中药辅助治疗，对老年病研究尤深，有独特的治疗经验擅治中医内科各种疑难病及肿瘤的中药辅助治疗，对老年病研究尤深，有独特的治疗经验擅治中医内科各种疑难病及肿瘤的中药辅助治疗，对老年病研究尤深，有独特的治疗经验擅治中医内科各种疑难病及肿瘤的中药辅助治疗，对老年病研究尤深，有独特的治疗经验擅治中医内科各种疑难病及肿瘤的中药辅助治疗，对老年病研究尤深，有独特的治疗经验擅治中医内科各种疑难病及肿瘤的中药辅助治疗，对老年病研究尤深，有独特的治疗经验擅治中医内科各种疑难病及肿瘤的中药辅助治疗，对老年病研究尤深，有独特的治疗经验。 
+      </div>
+      <div class="docTime">门诊时间：星期一上午;星期四下午;星期天上午;</div>
+    </div>
+  </div>
+</div>
+<script>
+    $('.btnDoc').click(function () {
+        $('#boxDoc').show();
+
+    })
+    $('#closeDoc').click(function () {
+        $('#boxDoc').hide();
+    })
+</script>-->
+<!--------------------------医生弹窗-------------------------->
+
+<!-------------------------- 登录-------------------------->
+<!--<div class="boxTc" id="boxLogin">
+  <form action="#"> 
+  <div class="loginTc">
+    <a href="javascript:void(0)" class="btnCloseTc" id="closeLogin"><i></i></a>
+    <img src="images/logo.png" class="loginLogo" />
+    <ul>
+      <li>
+        <input type="text" class="inputLogin" id="loginId" placeholder="手机号码">
+        <div class="tipsErr" id="phoneNull">请输入手机号码</div>
+        <div class="tipsErr" id="phoneErr">请输入正确的手机号码</div>
+      </li>
+      <li>
+        <input type="text" class="inputLogin" id="loginYzm" placeholder="验证码">
+        <button class="btnYzm" id="btnYzm">获取验证码</button>
+        <div class="tipsErr" id="yzmNull">请输入验证码</div>
+        <div class="tipsErr" id="yzmErr">验证码错误</div>
+        <div class="tipsOk" id="yzmYfs">验证码已发送到你手机，请注意查看</div>
+      </li>
+      <li><input type="submit" class="submitLogin" value="登 录"></li>
+    </ul>
+  </div>
+  </form>  
+</div>
+<script>
+    $('.btnTdjl').click(function () {
+        $('#boxLogin').show();
+
+    })
+    $('#closeLogin').click(function () {
+        $('#boxLogin').hide();
+    })
+
+
+
+    $('#loginId').blur(function () {
+        if ($(this).val() == "") {
+            $('#phoneErr').hide();
+            $('#phoneNull').show();
+            $('#btnYzm').removeClass('btnYzmOn');
+        }
+        else if ($(this).val().length != 11 || isNaN($(this).val())) {
+            $('#phoneNull').hide();
+            $('#phoneErr').show();
+            $('#btnYzm').removeClass('btnYzmOn');
+        }
+        else {
+            $('#phoneNull').hide();
+            $('#phoneErr').hide();
+            $('#btnYzm').addClass('btnYzmOn');
+        }
+    });
+
+    $('#loginYzm').blur(function () {
+        if ($(this).val() == "") {
+            $('#yzmErr,#yzmYfs').hide();
+            $('#yzmNull').show();
+        }
+        else if ($(this).val() != '1234') {
+            $('#yzmNull,#yzmYfs').hide();
+            $('#yzmErr').show();
+        }
+        else {
+            $('#yzmNull,#yzmErr,#yzmYfs').hide();
+        }
+    });
+
+
+    $('#btnYzm').click(function () {
+        $('#yzmNull,#yzmErr').hide();
+        $('#yzmYfs').show();
+    });
+
+    $('.submitLogin').click(function () {
+        if ($('#loginId').val() == '') {
+            $('#phoneNull').show();
+        }
+        else if ($('#loginYzm').val() == '') {
+            $('#yzmErr,#yzmYfs').hide();
+            $('#yzmNull').show();
+        }
+    });
+</script>-->
+<!--------------------------登录-------------------------->
+  <script>
+      $('.boxNav div a').each(function () {
+          if ($(this).text().indexOf('（') != -1) {
+              $(this).html($(this).html().replace('（', '︵<br>'));
+              $(this).html($(this).html().replace('）', '<br>︶'));
+          }
+      });
+  </script>
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

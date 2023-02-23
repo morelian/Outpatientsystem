@@ -1,0 +1,1198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OutpatientDemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_Booking">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="UserNo" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="WorkNo" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="Deal" Type="bit" />
+        </EntityType>
+        <EntityType Name="tb_Diagnosticlist">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="BookingNo" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="Time" Type="date" Nullable="false" />
+          <Property Name="Content" Type="text" Nullable="false" />
+          <Property Name="ZZ" Type="text" />
+          <Property Name="PriceType" Type="varchar" MaxLength="10" />
+          <Property Name="Prices" Type="float" />
+          <Property Name="Paid" Type="bit" />
+        </EntityType>
+        <EntityType Name="tb_Doctor">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Password" Type="varbinary" MaxLength="128" Nullable="false" />
+          <Property Name="Pinyin" Type="varchar" MaxLength="509" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Gender" Type="bit" Nullable="false" />
+          <Property Name="Introduction" Type="text" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Photo" Type="varchar" MaxLength="200" />
+          <Property Name="KeshiNo" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="ProtitleNo" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="FailCount" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_Drug">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="pinyin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Num" Type="float" Nullable="false" />
+          <Property Name="UNIT" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PharmacyNo" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="TypeNo" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="Content" Type="text" />
+          <Property Name="Price" Type="float" />
+        </EntityType>
+        <EntityType Name="tb_Keshi">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Pharmacy">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Pro_title">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Type">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“OutpatientDemo.dbo.tb_UseDrug”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="tb_UseDrug">
+          <Property Name="DrugNo" Type="char" MaxLength="6" />
+          <Property Name="ZDNo" Type="char" MaxLength="3" />
+          <Property Name="Num" Type="float" />
+        </EntityType>-->
+        <EntityType Name="tb_User">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Password" Type="varbinary" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Gender" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Photo" Type="varchar" MaxLength="200" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ViolationRecord" Type="bit" />
+          <Property Name="Betitled" Type="datetime" />
+          <Property Name="Addres" Type="text" />
+          <Property Name="FailCount" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_Worksheet">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="DoctorNo" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“OutpatientDemo.dbo.DoctorView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="DoctorView">
+          <Key>
+            <PropertyRef Name="编号" />
+            <PropertyRef Name="姓名" />
+            <PropertyRef Name="职称" />
+          </Key>
+          <Property Name="编号" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="姓名" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="职称" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="照片" Type="varchar" MaxLength="200" />
+          <Property Name="介绍" Type="text" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“OutpatientDemo.dbo.DrugView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="DrugView">
+          <Key>
+            <PropertyRef Name="编号" />
+            <PropertyRef Name="药名" />
+            <PropertyRef Name="拼音" />
+            <PropertyRef Name="数量" />
+            <PropertyRef Name="单位" />
+            <PropertyRef Name="分类编号" />
+            <PropertyRef Name="药品分类" />
+          </Key>
+          <Property Name="编号" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="药名" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="拼音" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="数量" Type="float" Nullable="false" />
+          <Property Name="单位" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="分类编号" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="药品分类" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“OutpatientDemo.dbo.UWYView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="UWYView">
+          <Key>
+            <PropertyRef Name="患者编号" />
+            <PropertyRef Name="患者姓名" />
+          </Key>
+          <Property Name="患者编号" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="患者姓名" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="数量" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“OutpatientDemo.dbo.WkView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="WkView">
+          <Key>
+            <PropertyRef Name="No" />
+            <PropertyRef Name="DNo" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="ks" />
+            <PropertyRef Name="zc" />
+            <PropertyRef Name="Time" />
+          </Key>
+          <Property Name="No" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="DNo" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ks" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="zc" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Time" Type="varchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“OutpatientDemo.dbo.WorksheetView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="WorksheetView">
+          <Key>
+            <PropertyRef Name="No" />
+            <PropertyRef Name="DoctorNo" />
+            <PropertyRef Name="Time" />
+            <PropertyRef Name="是否可预约" />
+          </Key>
+          <Property Name="No" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="DoctorNo" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="是否可预约" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“OutpatientDemo.dbo.WYView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="WYView">
+          <Key>
+            <PropertyRef Name="预约号" />
+            <PropertyRef Name="患者编号" />
+            <PropertyRef Name="患者姓名" />
+            <PropertyRef Name="预约时间" />
+            <PropertyRef Name="医生名字" />
+            <PropertyRef Name="医生编号" />
+            <PropertyRef Name="是否就诊" />
+            <PropertyRef Name="处理" />
+          </Key>
+          <Property Name="预约号" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="患者编号" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="患者姓名" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="预约时间" Type="datetime" Nullable="false" />
+          <Property Name="医生名字" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="医生编号" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="是否就诊" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="处理" Type="varchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“OutpatientDemo.dbo.YYView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="YYView">
+          <Key>
+            <PropertyRef Name="预约号" />
+            <PropertyRef Name="患者编号" />
+            <PropertyRef Name="患者姓名" />
+            <PropertyRef Name="预约时间" />
+            <PropertyRef Name="医生名字" />
+            <PropertyRef Name="医生编号" />
+            <PropertyRef Name="是否就诊" />
+          </Key>
+          <Property Name="预约号" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="患者编号" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="患者姓名" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="预约时间" Type="datetime" Nullable="false" />
+          <Property Name="医生名字" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="医生编号" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="是否就诊" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“OutpatientDemo.dbo.ZDrugView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="ZDrugView">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Unix" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Num" Type="float" />
+          <Property Name="Unix" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="float" />
+          <Property Name="No" Type="char" MaxLength="3" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“OutpatientDemo.dbo.ZDView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="ZDView">
+          <Key>
+            <PropertyRef Name="NO" />
+            <PropertyRef Name="Pno" />
+            <PropertyRef Name="Pname" />
+            <PropertyRef Name="Gender" />
+            <PropertyRef Name="DoctorName" />
+            <PropertyRef Name="KeSi" />
+            <PropertyRef Name="Phone" />
+          </Key>
+          <Property Name="NO" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="Pno" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Pname" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Address" Type="text" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Gender" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Time" Type="date" />
+          <Property Name="ZZ" Type="text" />
+          <Property Name="DoctorName" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="KeSi" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PriceType" Type="varchar" MaxLength="10" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Price" Type="float" />
+        </EntityType>
+        <Association Name="FK__tb_Doctor__Keshi__2C3393D0">
+          <End Role="tb_Keshi" Type="Self.tb_Keshi" Multiplicity="1" />
+          <End Role="tb_Doctor" Type="Self.tb_Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Keshi">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Doctor">
+              <PropertyRef Name="KeshiNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Booking_UserNo">
+          <End Role="tb_User" Type="Self.tb_User" Multiplicity="1" />
+          <End Role="tb_Booking" Type="Self.tb_Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_User">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Booking">
+              <PropertyRef Name="UserNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Booking_WorkNo">
+          <End Role="tb_Worksheet" Type="Self.tb_Worksheet" Multiplicity="1" />
+          <End Role="tb_Booking" Type="Self.tb_Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Worksheet">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Booking">
+              <PropertyRef Name="WorkNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Diagnosticlist_BookingNo">
+          <End Role="tb_Booking" Type="Self.tb_Booking" Multiplicity="1" />
+          <End Role="tb_Diagnosticlist" Type="Self.tb_Diagnosticlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Booking">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Diagnosticlist">
+              <PropertyRef Name="BookingNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Doctor_ProtitleNo">
+          <End Role="tb_Pro_title" Type="Self.tb_Pro_title" Multiplicity="1" />
+          <End Role="tb_Doctor" Type="Self.tb_Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Pro_title">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Doctor">
+              <PropertyRef Name="ProtitleNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Drug_Pharmacy">
+          <End Role="tb_Pharmacy" Type="Self.tb_Pharmacy" Multiplicity="1" />
+          <End Role="tb_Drug" Type="Self.tb_Drug" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Pharmacy">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Drug">
+              <PropertyRef Name="PharmacyNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Drug_TypeNo">
+          <End Role="tb_Type" Type="Self.tb_Type" Multiplicity="1" />
+          <End Role="tb_Drug" Type="Self.tb_Drug" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Type">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Drug">
+              <PropertyRef Name="TypeNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--生成过程中发现错误:
+错误 6004: 某个关系引用了表“OutpatientDemo.dbo.tb_UseDrug”，但找不到该表。
+        <Association Name="fk_UseDrug_DrugNo" />-->
+        <!--生成过程中发现错误:
+错误 6004: 某个关系引用了表“OutpatientDemo.dbo.tb_UseDrug”，但找不到该表。
+        <Association Name="fk_UseDrug_ZDNo" />-->
+        <Association Name="fk_Worksheet_DoctorNo">
+          <End Role="tb_Doctor" Type="Self.tb_Doctor" Multiplicity="1" />
+          <End Role="tb_Worksheet" Type="Self.tb_Worksheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Doctor">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Worksheet">
+              <PropertyRef Name="DoctorNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OutpatientDemoModelStoreContainer">
+          <EntitySet Name="tb_Booking" EntityType="Self.tb_Booking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Diagnosticlist" EntityType="Self.tb_Diagnosticlist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Doctor" EntityType="Self.tb_Doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Drug" EntityType="Self.tb_Drug" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Keshi" EntityType="Self.tb_Keshi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Pharmacy" EntityType="Self.tb_Pharmacy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Pro_title" EntityType="Self.tb_Pro_title" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Type" EntityType="Self.tb_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_User" EntityType="Self.tb_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Worksheet" EntityType="Self.tb_Worksheet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DoctorView" EntityType="Self.DoctorView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DoctorView].[编号] AS [编号], 
+    [DoctorView].[姓名] AS [姓名], 
+    [DoctorView].[职称] AS [职称], 
+    [DoctorView].[照片] AS [照片], 
+    [DoctorView].[介绍] AS [介绍]
+    FROM [dbo].[DoctorView] AS [DoctorView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DrugView" EntityType="Self.DrugView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DrugView].[编号] AS [编号], 
+    [DrugView].[药名] AS [药名], 
+    [DrugView].[拼音] AS [拼音], 
+    [DrugView].[数量] AS [数量], 
+    [DrugView].[单位] AS [单位], 
+    [DrugView].[分类编号] AS [分类编号], 
+    [DrugView].[药品分类] AS [药品分类]
+    FROM [dbo].[DrugView] AS [DrugView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UWYView" EntityType="Self.UWYView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UWYView].[患者编号] AS [患者编号], 
+    [UWYView].[患者姓名] AS [患者姓名], 
+    [UWYView].[数量] AS [数量]
+    FROM [dbo].[UWYView] AS [UWYView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WkView" EntityType="Self.WkView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WkView].[No] AS [No], 
+    [WkView].[DNo] AS [DNo], 
+    [WkView].[Name] AS [Name], 
+    [WkView].[ks] AS [ks], 
+    [WkView].[zc] AS [zc], 
+    [WkView].[Time] AS [Time]
+    FROM [dbo].[WkView] AS [WkView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WorksheetView" EntityType="Self.WorksheetView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WorksheetView].[No] AS [No], 
+    [WorksheetView].[DoctorNo] AS [DoctorNo], 
+    [WorksheetView].[Time] AS [Time], 
+    [WorksheetView].[是否可预约] AS [是否可预约]
+    FROM [dbo].[WorksheetView] AS [WorksheetView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WYView" EntityType="Self.WYView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WYView].[预约号] AS [预约号], 
+    [WYView].[患者编号] AS [患者编号], 
+    [WYView].[患者姓名] AS [患者姓名], 
+    [WYView].[预约时间] AS [预约时间], 
+    [WYView].[医生名字] AS [医生名字], 
+    [WYView].[医生编号] AS [医生编号], 
+    [WYView].[是否就诊] AS [是否就诊], 
+    [WYView].[处理] AS [处理]
+    FROM [dbo].[WYView] AS [WYView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="YYView" EntityType="Self.YYView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [YYView].[预约号] AS [预约号], 
+    [YYView].[患者编号] AS [患者编号], 
+    [YYView].[患者姓名] AS [患者姓名], 
+    [YYView].[预约时间] AS [预约时间], 
+    [YYView].[医生名字] AS [医生名字], 
+    [YYView].[医生编号] AS [医生编号], 
+    [YYView].[是否就诊] AS [是否就诊]
+    FROM [dbo].[YYView] AS [YYView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ZDrugView" EntityType="Self.ZDrugView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ZDrugView].[Name] AS [Name], 
+    [ZDrugView].[Num] AS [Num], 
+    [ZDrugView].[Unix] AS [Unix], 
+    [ZDrugView].[Price] AS [Price], 
+    [ZDrugView].[No] AS [No]
+    FROM [dbo].[ZDrugView] AS [ZDrugView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ZDView" EntityType="Self.ZDView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ZDView].[NO] AS [NO], 
+    [ZDView].[Pno] AS [Pno], 
+    [ZDView].[Pname] AS [Pname], 
+    [ZDView].[Address] AS [Address], 
+    [ZDView].[Age] AS [Age], 
+    [ZDView].[Gender] AS [Gender], 
+    [ZDView].[Time] AS [Time], 
+    [ZDView].[ZZ] AS [ZZ], 
+    [ZDView].[DoctorName] AS [DoctorName], 
+    [ZDView].[KeSi] AS [KeSi], 
+    [ZDView].[PriceType] AS [PriceType], 
+    [ZDView].[Phone] AS [Phone], 
+    [ZDView].[Price] AS [Price]
+    FROM [dbo].[ZDView] AS [ZDView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__tb_Doctor__Keshi__2C3393D0" Association="Self.FK__tb_Doctor__Keshi__2C3393D0">
+            <End Role="tb_Keshi" EntitySet="tb_Keshi" />
+            <End Role="tb_Doctor" EntitySet="tb_Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Booking_UserNo" Association="Self.fk_Booking_UserNo">
+            <End Role="tb_User" EntitySet="tb_User" />
+            <End Role="tb_Booking" EntitySet="tb_Booking" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Booking_WorkNo" Association="Self.fk_Booking_WorkNo">
+            <End Role="tb_Worksheet" EntitySet="tb_Worksheet" />
+            <End Role="tb_Booking" EntitySet="tb_Booking" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Diagnosticlist_BookingNo" Association="Self.fk_Diagnosticlist_BookingNo">
+            <End Role="tb_Booking" EntitySet="tb_Booking" />
+            <End Role="tb_Diagnosticlist" EntitySet="tb_Diagnosticlist" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Doctor_ProtitleNo" Association="Self.fk_Doctor_ProtitleNo">
+            <End Role="tb_Pro_title" EntitySet="tb_Pro_title" />
+            <End Role="tb_Doctor" EntitySet="tb_Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Drug_Pharmacy" Association="Self.fk_Drug_Pharmacy">
+            <End Role="tb_Pharmacy" EntitySet="tb_Pharmacy" />
+            <End Role="tb_Drug" EntitySet="tb_Drug" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Drug_TypeNo" Association="Self.fk_Drug_TypeNo">
+            <End Role="tb_Type" EntitySet="tb_Type" />
+            <End Role="tb_Drug" EntitySet="tb_Drug" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Worksheet_DoctorNo" Association="Self.fk_Worksheet_DoctorNo">
+            <End Role="tb_Doctor" EntitySet="tb_Doctor" />
+            <End Role="tb_Worksheet" EntitySet="tb_Worksheet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OutpatientDemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_Booking">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UserNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="WorkNo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Deal" Type="Boolean" />
+          <NavigationProperty Name="tb_User" Relationship="Self.fk_Booking_UserNo" FromRole="tb_Booking" ToRole="tb_User" />
+          <NavigationProperty Name="tb_Worksheet" Relationship="Self.fk_Booking_WorkNo" FromRole="tb_Booking" ToRole="tb_Worksheet" />
+          <NavigationProperty Name="tb_Diagnosticlist" Relationship="Self.fk_Diagnosticlist_BookingNo" FromRole="tb_Booking" ToRole="tb_Diagnosticlist" />
+        </EntityType>
+        <EntityType Name="tb_Diagnosticlist">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="BookingNo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ZZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PriceType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Prices" Type="Double" />
+          <Property Name="Paid" Type="Boolean" />
+          <NavigationProperty Name="tb_Booking" Relationship="Self.fk_Diagnosticlist_BookingNo" FromRole="tb_Diagnosticlist" ToRole="tb_Booking" />
+        </EntityType>
+        <EntityType Name="tb_Doctor">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="Binary" MaxLength="128" FixedLength="false" Nullable="false" />
+          <Property Name="Pinyin" Type="String" MaxLength="509" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="false" />
+          <Property Name="Introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="KeshiNo" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ProtitleNo" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FailCount" Type="Int32" />
+          <NavigationProperty Name="tb_Keshi" Relationship="Self.FK__tb_Doctor__Keshi__2C3393D0" FromRole="tb_Doctor" ToRole="tb_Keshi" />
+          <NavigationProperty Name="tb_Pro_title" Relationship="Self.fk_Doctor_ProtitleNo" FromRole="tb_Doctor" ToRole="tb_Pro_title" />
+          <NavigationProperty Name="tb_Worksheet" Relationship="Self.fk_Worksheet_DoctorNo" FromRole="tb_Doctor" ToRole="tb_Worksheet" />
+        </EntityType>
+        <EntityType Name="tb_Drug">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pinyin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Num" Type="Double" Nullable="false" />
+          <Property Name="UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PharmacyNo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TypeNo" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Double" />
+          <NavigationProperty Name="tb_Pharmacy" Relationship="Self.fk_Drug_Pharmacy" FromRole="tb_Drug" ToRole="tb_Pharmacy" />
+          <NavigationProperty Name="tb_Type" Relationship="Self.fk_Drug_TypeNo" FromRole="tb_Drug" ToRole="tb_Type" />
+        </EntityType>
+        <EntityType Name="tb_Keshi">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tb_Doctor" Relationship="Self.FK__tb_Doctor__Keshi__2C3393D0" FromRole="tb_Keshi" ToRole="tb_Doctor" />
+        </EntityType>
+        <EntityType Name="tb_Pharmacy">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tb_Drug" Relationship="Self.fk_Drug_Pharmacy" FromRole="tb_Pharmacy" ToRole="tb_Drug" />
+        </EntityType>
+        <EntityType Name="tb_Pro_title">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tb_Doctor" Relationship="Self.fk_Doctor_ProtitleNo" FromRole="tb_Pro_title" ToRole="tb_Doctor" />
+        </EntityType>
+        <EntityType Name="tb_Type">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tb_Drug" Relationship="Self.fk_Drug_TypeNo" FromRole="tb_Type" ToRole="tb_Drug" />
+        </EntityType>
+        <EntityType Name="tb_User">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="Binary" MaxLength="128" FixedLength="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ViolationRecord" Type="Boolean" />
+          <Property Name="Betitled" Type="DateTime" Precision="3" />
+          <Property Name="Addres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FailCount" Type="Int32" />
+          <NavigationProperty Name="tb_Booking" Relationship="Self.fk_Booking_UserNo" FromRole="tb_User" ToRole="tb_Booking" />
+        </EntityType>
+        <EntityType Name="tb_Worksheet">
+          <Key>
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DoctorNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tb_Booking" Relationship="Self.fk_Booking_WorkNo" FromRole="tb_Worksheet" ToRole="tb_Booking" />
+          <NavigationProperty Name="tb_Doctor" Relationship="Self.fk_Worksheet_DoctorNo" FromRole="tb_Worksheet" ToRole="tb_Doctor" />
+        </EntityType>
+        <EntityType Name="DoctorView">
+          <Key>
+            <PropertyRef Name="编号" />
+            <PropertyRef Name="姓名" />
+            <PropertyRef Name="职称" />
+          </Key>
+          <Property Name="编号" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="姓名" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="职称" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="照片" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="介绍" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DrugView">
+          <Key>
+            <PropertyRef Name="编号" />
+            <PropertyRef Name="药名" />
+            <PropertyRef Name="拼音" />
+            <PropertyRef Name="数量" />
+            <PropertyRef Name="单位" />
+            <PropertyRef Name="分类编号" />
+            <PropertyRef Name="药品分类" />
+          </Key>
+          <Property Name="编号" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="药名" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="拼音" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="数量" Type="Double" Nullable="false" />
+          <Property Name="单位" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="分类编号" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="药品分类" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UWYView">
+          <Key>
+            <PropertyRef Name="患者编号" />
+            <PropertyRef Name="患者姓名" />
+          </Key>
+          <Property Name="患者编号" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="患者姓名" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="数量" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WkView">
+          <Key>
+            <PropertyRef Name="No" />
+            <PropertyRef Name="DNo" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="ks" />
+            <PropertyRef Name="zc" />
+            <PropertyRef Name="Time" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="zc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Time" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorksheetView">
+          <Key>
+            <PropertyRef Name="No" />
+            <PropertyRef Name="DoctorNo" />
+            <PropertyRef Name="Time" />
+            <PropertyRef Name="是否可预约" />
+          </Key>
+          <Property Name="No" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DoctorNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="是否可预约" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WYView">
+          <Key>
+            <PropertyRef Name="预约号" />
+            <PropertyRef Name="患者编号" />
+            <PropertyRef Name="患者姓名" />
+            <PropertyRef Name="预约时间" />
+            <PropertyRef Name="医生名字" />
+            <PropertyRef Name="医生编号" />
+            <PropertyRef Name="是否就诊" />
+            <PropertyRef Name="处理" />
+          </Key>
+          <Property Name="预约号" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="患者编号" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="患者姓名" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="预约时间" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="医生名字" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="医生编号" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="是否就诊" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="处理" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="YYView">
+          <Key>
+            <PropertyRef Name="预约号" />
+            <PropertyRef Name="患者编号" />
+            <PropertyRef Name="患者姓名" />
+            <PropertyRef Name="预约时间" />
+            <PropertyRef Name="医生名字" />
+            <PropertyRef Name="医生编号" />
+            <PropertyRef Name="是否就诊" />
+          </Key>
+          <Property Name="预约号" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="患者编号" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="患者姓名" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="预约时间" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="医生名字" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="医生编号" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="是否就诊" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ZDrugView">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Unix" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Num" Type="Double" />
+          <Property Name="Unix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="No" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ZDView">
+          <Key>
+            <PropertyRef Name="NO" />
+            <PropertyRef Name="Pno" />
+            <PropertyRef Name="Pname" />
+            <PropertyRef Name="Gender" />
+            <PropertyRef Name="DoctorName" />
+            <PropertyRef Name="KeSi" />
+            <PropertyRef Name="Phone" />
+          </Key>
+          <Property Name="NO" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Pno" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Pname" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Precision="0" />
+          <Property Name="ZZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DoctorName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KeSi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PriceType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Double" />
+        </EntityType>
+        <Association Name="fk_Booking_UserNo">
+          <End Role="tb_User" Type="Self.tb_User" Multiplicity="1" />
+          <End Role="tb_Booking" Type="Self.tb_Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_User">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Booking">
+              <PropertyRef Name="UserNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Booking_WorkNo">
+          <End Role="tb_Worksheet" Type="Self.tb_Worksheet" Multiplicity="1" />
+          <End Role="tb_Booking" Type="Self.tb_Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Worksheet">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Booking">
+              <PropertyRef Name="WorkNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Diagnosticlist_BookingNo">
+          <End Role="tb_Booking" Type="Self.tb_Booking" Multiplicity="1" />
+          <End Role="tb_Diagnosticlist" Type="Self.tb_Diagnosticlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Booking">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Diagnosticlist">
+              <PropertyRef Name="BookingNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_Doctor__Keshi__2C3393D0">
+          <End Role="tb_Keshi" Type="Self.tb_Keshi" Multiplicity="1" />
+          <End Role="tb_Doctor" Type="Self.tb_Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Keshi">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Doctor">
+              <PropertyRef Name="KeshiNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Doctor_ProtitleNo">
+          <End Role="tb_Pro_title" Type="Self.tb_Pro_title" Multiplicity="1" />
+          <End Role="tb_Doctor" Type="Self.tb_Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Pro_title">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Doctor">
+              <PropertyRef Name="ProtitleNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Worksheet_DoctorNo">
+          <End Role="tb_Doctor" Type="Self.tb_Doctor" Multiplicity="1" />
+          <End Role="tb_Worksheet" Type="Self.tb_Worksheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Doctor">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Worksheet">
+              <PropertyRef Name="DoctorNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Drug_Pharmacy">
+          <End Role="tb_Pharmacy" Type="Self.tb_Pharmacy" Multiplicity="1" />
+          <End Role="tb_Drug" Type="Self.tb_Drug" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Pharmacy">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Drug">
+              <PropertyRef Name="PharmacyNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Drug_TypeNo">
+          <End Role="tb_Type" Type="Self.tb_Type" Multiplicity="1" />
+          <End Role="tb_Drug" Type="Self.tb_Drug" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Type">
+              <PropertyRef Name="No" />
+            </Principal>
+            <Dependent Role="tb_Drug">
+              <PropertyRef Name="TypeNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OutpatientDemoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_Booking" EntityType="Self.tb_Booking" />
+          <EntitySet Name="tb_Diagnosticlist" EntityType="Self.tb_Diagnosticlist" />
+          <EntitySet Name="tb_Doctor" EntityType="Self.tb_Doctor" />
+          <EntitySet Name="tb_Drug" EntityType="Self.tb_Drug" />
+          <EntitySet Name="tb_Keshi" EntityType="Self.tb_Keshi" />
+          <EntitySet Name="tb_Pharmacy" EntityType="Self.tb_Pharmacy" />
+          <EntitySet Name="tb_Pro_title" EntityType="Self.tb_Pro_title" />
+          <EntitySet Name="tb_Type" EntityType="Self.tb_Type" />
+          <EntitySet Name="tb_User" EntityType="Self.tb_User" />
+          <EntitySet Name="tb_Worksheet" EntityType="Self.tb_Worksheet" />
+          <EntitySet Name="DoctorView" EntityType="Self.DoctorView" />
+          <EntitySet Name="DrugView" EntityType="Self.DrugView" />
+          <EntitySet Name="UWYView" EntityType="Self.UWYView" />
+          <EntitySet Name="WkView" EntityType="Self.WkView" />
+          <EntitySet Name="WorksheetView" EntityType="Self.WorksheetView" />
+          <EntitySet Name="WYView" EntityType="Self.WYView" />
+          <EntitySet Name="YYView" EntityType="Self.YYView" />
+          <EntitySet Name="ZDrugView" EntityType="Self.ZDrugView" />
+          <EntitySet Name="ZDView" EntityType="Self.ZDView" />
+          <AssociationSet Name="fk_Booking_UserNo" Association="Self.fk_Booking_UserNo">
+            <End Role="tb_User" EntitySet="tb_User" />
+            <End Role="tb_Booking" EntitySet="tb_Booking" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Booking_WorkNo" Association="Self.fk_Booking_WorkNo">
+            <End Role="tb_Worksheet" EntitySet="tb_Worksheet" />
+            <End Role="tb_Booking" EntitySet="tb_Booking" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Diagnosticlist_BookingNo" Association="Self.fk_Diagnosticlist_BookingNo">
+            <End Role="tb_Booking" EntitySet="tb_Booking" />
+            <End Role="tb_Diagnosticlist" EntitySet="tb_Diagnosticlist" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_Doctor__Keshi__2C3393D0" Association="Self.FK__tb_Doctor__Keshi__2C3393D0">
+            <End Role="tb_Keshi" EntitySet="tb_Keshi" />
+            <End Role="tb_Doctor" EntitySet="tb_Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Doctor_ProtitleNo" Association="Self.fk_Doctor_ProtitleNo">
+            <End Role="tb_Pro_title" EntitySet="tb_Pro_title" />
+            <End Role="tb_Doctor" EntitySet="tb_Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Worksheet_DoctorNo" Association="Self.fk_Worksheet_DoctorNo">
+            <End Role="tb_Doctor" EntitySet="tb_Doctor" />
+            <End Role="tb_Worksheet" EntitySet="tb_Worksheet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Drug_Pharmacy" Association="Self.fk_Drug_Pharmacy">
+            <End Role="tb_Pharmacy" EntitySet="tb_Pharmacy" />
+            <End Role="tb_Drug" EntitySet="tb_Drug" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Drug_TypeNo" Association="Self.fk_Drug_TypeNo">
+            <End Role="tb_Type" EntitySet="tb_Type" />
+            <End Role="tb_Drug" EntitySet="tb_Drug" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OutpatientDemoModelStoreContainer" CdmEntityContainer="OutpatientDemoEntities">
+          <EntitySetMapping Name="tb_Booking">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.tb_Booking">
+              <MappingFragment StoreEntitySet="tb_Booking">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="UserNo" ColumnName="UserNo" />
+                <ScalarProperty Name="WorkNo" ColumnName="WorkNo" />
+                <ScalarProperty Name="Deal" ColumnName="Deal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Diagnosticlist">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.tb_Diagnosticlist">
+              <MappingFragment StoreEntitySet="tb_Diagnosticlist">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="BookingNo" ColumnName="BookingNo" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ZZ" ColumnName="ZZ" />
+                <ScalarProperty Name="PriceType" ColumnName="PriceType" />
+                <ScalarProperty Name="Prices" ColumnName="Prices" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Doctor">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.tb_Doctor">
+              <MappingFragment StoreEntitySet="tb_Doctor">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Pinyin" ColumnName="Pinyin" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="KeshiNo" ColumnName="KeshiNo" />
+                <ScalarProperty Name="ProtitleNo" ColumnName="ProtitleNo" />
+                <ScalarProperty Name="FailCount" ColumnName="FailCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Drug">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.tb_Drug">
+              <MappingFragment StoreEntitySet="tb_Drug">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="pinyin" ColumnName="pinyin" />
+                <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+                <ScalarProperty Name="PharmacyNo" ColumnName="PharmacyNo" />
+                <ScalarProperty Name="TypeNo" ColumnName="TypeNo" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Keshi">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.tb_Keshi">
+              <MappingFragment StoreEntitySet="tb_Keshi">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Pharmacy">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.tb_Pharmacy">
+              <MappingFragment StoreEntitySet="tb_Pharmacy">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Pro_title">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.tb_Pro_title">
+              <MappingFragment StoreEntitySet="tb_Pro_title">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Type">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.tb_Type">
+              <MappingFragment StoreEntitySet="tb_Type">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_User">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.tb_User">
+              <MappingFragment StoreEntitySet="tb_User">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="ViolationRecord" ColumnName="ViolationRecord" />
+                <ScalarProperty Name="Betitled" ColumnName="Betitled" />
+                <ScalarProperty Name="Addres" ColumnName="Addres" />
+                <ScalarProperty Name="FailCount" ColumnName="FailCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Worksheet">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.tb_Worksheet">
+              <MappingFragment StoreEntitySet="tb_Worksheet">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="DoctorNo" ColumnName="DoctorNo" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DoctorView">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.DoctorView">
+              <MappingFragment StoreEntitySet="DoctorView">
+                <ScalarProperty Name="编号" ColumnName="编号" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="职称" ColumnName="职称" />
+                <ScalarProperty Name="照片" ColumnName="照片" />
+                <ScalarProperty Name="介绍" ColumnName="介绍" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DrugView">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.DrugView">
+              <MappingFragment StoreEntitySet="DrugView">
+                <ScalarProperty Name="编号" ColumnName="编号" />
+                <ScalarProperty Name="药名" ColumnName="药名" />
+                <ScalarProperty Name="拼音" ColumnName="拼音" />
+                <ScalarProperty Name="数量" ColumnName="数量" />
+                <ScalarProperty Name="单位" ColumnName="单位" />
+                <ScalarProperty Name="分类编号" ColumnName="分类编号" />
+                <ScalarProperty Name="药品分类" ColumnName="药品分类" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UWYView">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.UWYView">
+              <MappingFragment StoreEntitySet="UWYView">
+                <ScalarProperty Name="患者编号" ColumnName="患者编号" />
+                <ScalarProperty Name="患者姓名" ColumnName="患者姓名" />
+                <ScalarProperty Name="数量" ColumnName="数量" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WkView">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.WkView">
+              <MappingFragment StoreEntitySet="WkView">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="DNo" ColumnName="DNo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ks" ColumnName="ks" />
+                <ScalarProperty Name="zc" ColumnName="zc" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorksheetView">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.WorksheetView">
+              <MappingFragment StoreEntitySet="WorksheetView">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="DoctorNo" ColumnName="DoctorNo" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="是否可预约" ColumnName="是否可预约" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WYView">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.WYView">
+              <MappingFragment StoreEntitySet="WYView">
+                <ScalarProperty Name="预约号" ColumnName="预约号" />
+                <ScalarProperty Name="患者编号" ColumnName="患者编号" />
+                <ScalarProperty Name="患者姓名" ColumnName="患者姓名" />
+                <ScalarProperty Name="预约时间" ColumnName="预约时间" />
+                <ScalarProperty Name="医生名字" ColumnName="医生名字" />
+                <ScalarProperty Name="医生编号" ColumnName="医生编号" />
+                <ScalarProperty Name="是否就诊" ColumnName="是否就诊" />
+                <ScalarProperty Name="处理" ColumnName="处理" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YYView">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.YYView">
+              <MappingFragment StoreEntitySet="YYView">
+                <ScalarProperty Name="预约号" ColumnName="预约号" />
+                <ScalarProperty Name="患者编号" ColumnName="患者编号" />
+                <ScalarProperty Name="患者姓名" ColumnName="患者姓名" />
+                <ScalarProperty Name="预约时间" ColumnName="预约时间" />
+                <ScalarProperty Name="医生名字" ColumnName="医生名字" />
+                <ScalarProperty Name="医生编号" ColumnName="医生编号" />
+                <ScalarProperty Name="是否就诊" ColumnName="是否就诊" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZDrugView">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.ZDrugView">
+              <MappingFragment StoreEntitySet="ZDrugView">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="Unix" ColumnName="Unix" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="No" ColumnName="No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZDView">
+            <EntityTypeMapping TypeName="OutpatientDemoModel.ZDView">
+              <MappingFragment StoreEntitySet="ZDView">
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="Pno" ColumnName="Pno" />
+                <ScalarProperty Name="Pname" ColumnName="Pname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="ZZ" ColumnName="ZZ" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="KeSi" ColumnName="KeSi" />
+                <ScalarProperty Name="PriceType" ColumnName="PriceType" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

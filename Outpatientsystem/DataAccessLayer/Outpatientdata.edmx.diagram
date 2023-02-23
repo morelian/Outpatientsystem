@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="57e9eabeb3f44e46a351df86bc6942cc" Name="Diagram1">
+        <EntityTypeShape EntityType="OutpatientDemoModel.tb_Booking" Width="1.5" PointX="7.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.tb_Diagnosticlist" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.tb_Doctor" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.tb_Drug" Width="1.5" PointX="10" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.tb_Keshi" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.tb_Pharmacy" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.tb_Pro_title" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.tb_Type" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.tb_User" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.tb_Worksheet" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.DoctorView" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.DrugView" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.UWYView" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.WkView" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.WorksheetView" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.WYView" Width="1.5" PointX="11.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.YYView" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.ZDrugView" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OutpatientDemoModel.ZDView" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="OutpatientDemoModel.fk_Booking_UserNo" ManuallyRouted="false" />
+        <AssociationConnector Association="OutpatientDemoModel.fk_Booking_WorkNo" ManuallyRouted="false" />
+        <AssociationConnector Association="OutpatientDemoModel.fk_Diagnosticlist_BookingNo" ManuallyRouted="false" />
+        <AssociationConnector Association="OutpatientDemoModel.FK__tb_Doctor__Keshi__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="OutpatientDemoModel.fk_Doctor_ProtitleNo" ManuallyRouted="false" />
+        <AssociationConnector Association="OutpatientDemoModel.fk_Worksheet_DoctorNo" ManuallyRouted="false" />
+        <AssociationConnector Association="OutpatientDemoModel.fk_Drug_Pharmacy" ManuallyRouted="false" />
+        <AssociationConnector Association="OutpatientDemoModel.fk_Drug_TypeNo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

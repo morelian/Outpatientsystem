@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="doctorui.master.cs" Inherits="Outpatientsystem.doctorui" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts/jquery-3.6.3.min.js"></script>
+    <script src="Scripts/jquery-3.6.3.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+        <link href="Css/blue.css" rel="stylesheet" />
+    <link href="Css/common.css" rel="stylesheet" />
+    <link href="Css/workstation.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-sm bg-light justify-content-center" >
+  <ul class="navbar-nav" style="color:antiquewhite">
+          <li class="nav-item">
+      <a class="nav-link" href="Doctor_Index.aspx" style="color:#87CEEB ;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size:20px;">主页</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="yy.aspx" style="color:#87CEEB ;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size:20px;">预约</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="Doctor_Login.aspx" style="color:#87CEEB;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size:20px;">登录</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="login.aspx" style="color:#87CEEB ;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size:20px;">切换到用户端口</a>
+    </li>
+  </ul>
+</nav>
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

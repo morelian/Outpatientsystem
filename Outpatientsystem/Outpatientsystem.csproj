@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -43,7 +44,92 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.CommandLine, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.CommandLine.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Json.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.3.1.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.3.1.0\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=4.0.2.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.4.0.2\lib\net451\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Steeltoe.Extensions.Configuration.SpringBootBase, Version=3.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Steeltoe.Extensions.Configuration.SpringBootBase.3.2.3\lib\netstandard2.0\Steeltoe.Extensions.Configuration.SpringBootBase.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.7.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.7.0.0\lib\net462\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,11 +153,393 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Image\0.jfif" />
+    <Content Include="App_Data\DatabaseOutpatient.mdf" />
+    <Content Include="App_Data\DatabaseOutpatient_log.ldf">
+      <DependentUpon>DatabaseOutpatient.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Css\animate.css" />
+    <Content Include="Css\blue.css" />
+    <Content Include="Css\common.css" />
+    <Content Include="Css\css.css" />
+    <Content Include="Css\jquery-3.2.1.min.js" />
+    <Content Include="Css\jquery.validationEngine-zh_CN.js" />
+    <Content Include="Css\jquery.validationEngine.min.js" />
+    <Content Include="Css\mCss.css" />
+    <Content Include="Css\swiper-4.5.0.min.css" />
+    <Content Include="Css\swiper-4.5.0.min.js" />
+    <Content Include="Css\validationEngine.jquery.css" />
+    <Content Include="Css\workstation.css" />
+    <Content Include="DataAccessLayer\Outpatientdata.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Outpatientdata.Context.cs</LastGenOutput>
+      <DependentUpon>Outpatientdata.edmx</DependentUpon>
+    </Content>
+    <Content Include="DataAccessLayer\Outpatientdata.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Outpatientdata.edmx</DependentUpon>
+      <LastGenOutput>Outpatientdata.cs</LastGenOutput>
+    </Content>
+    <Content Include="Doctor_Index.aspx" />
+    <Content Include="Doctor_login.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\0.jfif" />
+    <Content Include="images\1586834016596.jpg" />
+    <Content Include="images\1586853295666.png" />
+    <Content Include="images\1586854011552.JPG" />
+    <Content Include="images\1589963004278.jpg" />
+    <Content Include="images\1589965009089.jpg" />
+    <Content Include="images\1589965200973.png" />
+    <Content Include="images\1589967254608.jpg" />
+    <Content Include="images\1590396612381.jpg" />
+    <Content Include="images\1590396779149.jpg" />
+    <Content Include="images\1590396907938.JPG" />
+    <Content Include="images\1590396954024 %281%29.jpg" />
+    <Content Include="images\1590396954024.jpg" />
+    <Content Include="images\1590397067132.jpg" />
+    <Content Include="images\1590397129279.jpg" />
+    <Content Include="images\1590397184710.jpg" />
+    <Content Include="images\1590397255215.jpg" />
+    <Content Include="images\1590397559307.jpg" />
+    <Content Include="images\1590397583699.jpg" />
+    <Content Include="images\1590397601265.jpg" />
+    <Content Include="images\1590397759014.jpg" />
+    <Content Include="images\1591144523245.jpg" />
+    <Content Include="images\1598942930324.jpg" />
+    <Content Include="images\1604389125858.jpg" />
+    <Content Include="images\1608794760370.jpg" />
+    <Content Include="images\1610118364485.jpg" />
+    <Content Include="images\1647571922305.png" />
+    <Content Include="images\1670315229181.jpg" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\bg1.jpg" />
+    <Content Include="images\bgDocLine.png" />
+    <Content Include="images\bgFoot.jpg" />
+    <Content Include="images\bgFoot1.jpg" />
+    <Content Include="images\bgIndex.jpg" />
+    <Content Include="images\bgIndKs.png" />
+    <Content Include="images\bgKs.jpg" />
+    <Content Include="images\bgLi.jpg" />
+    <Content Include="images\bgLineFoot.png" />
+    <Content Include="images\bgNav.png" />
+    <Content Include="images\bgNavLine.png" />
+    <Content Include="images\bgNavM.jpg" />
+    <Content Include="images\bgNotice.jpg" />
+    <Content Include="images\bgNoticeNav.png" />
+    <Content Include="images\bgTop.jpg" />
+    <Content Include="images\bgWhcc.jpg" />
+    <Content Include="images\bgWhccA.png" />
+    <Content Include="images\bgWhccM.jpg" />
+    <Content Include="images\bgWhite.png" />
+    <Content Include="images\icoContact1.png" />
+    <Content Include="images\icoContact2.png" />
+    <Content Include="images\icoContact3.png" />
+    <Content Include="images\icoContact4.png" />
+    <Content Include="images\icoCurJt.png" />
+    <Content Include="images\icoDoc.png" />
+    <Content Include="images\icoDocHover.png" />
+    <Content Include="images\icoIndex1.png" />
+    <Content Include="images\icoIndex2.png" />
+    <Content Include="images\icoIndex3.png" />
+    <Content Include="images\icoIndex4.png" />
+    <Content Include="images\icoIndex6.png" />
+    <Content Include="images\icoJtL.png" />
+    <Content Include="images\icoJtR.png" />
+    <Content Include="images\icoKs18 %281%29.png" />
+    <Content Include="images\icoKs18.png" />
+    <Content Include="images\icoLine.png" />
+    <Content Include="images\icoMore.png" />
+    <Content Include="images\icoMore1.png" />
+    <Content Include="images\icoNavM.png" />
+    <Content Include="images\icoQuitNav1.png" />
+    <Content Include="images\icoQuitNav2.png" />
+    <Content Include="images\icoQuitNav3.png" />
+    <Content Include="images\icoQuitNav4.png" />
+    <Content Include="images\icoQuitNav5.png" />
+    <Content Include="images\icoQuitNav6.png" />
+    <Content Include="images\icoSearchTop.png" />
+    <Content Include="images\icoSearchTopM.png" />
+    <Content Include="images\img20200401114329.png" />
+    <Content Include="images\img20200401114713.png" />
+    <Content Include="images\img20200401115047.png" />
+    <Content Include="images\img20200401115216.png" />
+    <Content Include="images\img20200401115338.png" />
+    <Content Include="images\img20200401115506.png" />
+    <Content Include="images\img20200401115542.png" />
+    <Content Include="images\img20200401115622.png" />
+    <Content Include="images\img20200401115647.png" />
+    <Content Include="images\img20200401115719.png" />
+    <Content Include="images\img20200402101558.png" />
+    <Content Include="images\img20200402101816.png" />
+    <Content Include="images\img20200402101942.png" />
+    <Content Include="images\img20200402102127.png" />
+    <Content Include="images\img20200402102700.png" />
+    <Content Include="images\img20200415115356.png" />
+    <Content Include="images\img20210804045056.png" />
+    <Content Include="images\imgEwm_dyh.png" />
+    <Content Include="images\imgEwm_fwy.png" />
+    <Content Include="images\imgNav1.png" />
+    <Content Include="images\imgNav10.png" />
+    <Content Include="images\imgNav10Hover.png" />
+    <Content Include="images\imgNav11.png" />
+    <Content Include="images\imgNav11Hover.png" />
+    <Content Include="images\imgNav1Hover.png" />
+    <Content Include="images\imgNav2.png" />
+    <Content Include="images\imgNav2Hover.png" />
+    <Content Include="images\imgNav3.png" />
+    <Content Include="images\imgNav3Hover.png" />
+    <Content Include="images\imgNav4.png" />
+    <Content Include="images\imgNav4Hover.png" />
+    <Content Include="images\imgNav5.png" />
+    <Content Include="images\imgNav5Hover.png" />
+    <Content Include="images\imgNav6.png" />
+    <Content Include="images\imgNav6Hover.png" />
+    <Content Include="images\imgNav7.png" />
+    <Content Include="images\imgNav7Hover.png" />
+    <Content Include="images\imgNav8.png" />
+    <Content Include="images\imgNav8Hover.png" />
+    <Content Include="images\imgNav9.png" />
+    <Content Include="images\imgNav9Hover.png" />
+    <Content Include="images\imgNavKs.png" />
+    <Content Include="images\imgNavKsM.png" />
+    <Content Include="images\imgNavWhcc.png" />
+    <Content Include="images\imgNavZj.png" />
+    <Content Include="images\imgNavZjM.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logoFoot.png" />
+    <Content Include="images\no.Jpg" />
+    <Content Include="images\openMenu.png" />
+    <Content Include="images\show1.jpg" />
+    <Content Include="images\show2.jpg" />
+    <Content Include="images\俞洁.png" />
+    <Content Include="images\吴童.png" />
+    <Content Include="images\周建衡.png" />
+    <Content Include="images\周玉华.png" />
+    <Content Include="images\张明选.png" />
+    <Content Include="images\施红.png" />
+    <Content Include="images\李奕祺.png" />
+    <Content Include="images\李德森.png" />
+    <Content Include="images\杨敏.png" />
+    <Content Include="images\林信富.png" />
+    <Content Include="images\林海鸣.png" />
+    <Content Include="images\王海生.png" />
+    <Content Include="images\王苹.png" />
+    <Content Include="images\王虹.png" />
+    <Content Include="images\邓月娥.png" />
+    <Content Include="images\郑晨.png" />
+    <Content Include="images\郭明章.png" />
+    <Content Include="images\金浪.png" />
+    <Content Include="images\鲁玉辉.png" />
+    <Content Include="images\黄俊山.png" />
+    <Content Include="images\黄武松.png" />
+    <Content Include="images\黄颖.png" />
+    <Content Include="Image\inde-logo.png" />
+    <Content Include="Image\logo2.jpg" />
+    <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Dweb\Patient.aspx" />
+    <Content Include="Map.aspx" />
+    <Content Include="Personal.aspx" />
+    <Content Include="register.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="showdoc.aspx" />
+    <Content Include="Worksheet.aspx" />
+    <Content Include="Dweb\doctorui.Master" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Dweb\yy.aspx" />
+    <Content Include="zj_yscx.aspx" />
+    <EntityDeploy Include="DataAccessLayer\Outpatientdata.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Outpatientdata.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataAccessLayer\Outpatientdata.edmx.diagram">
+      <DependentUpon>Outpatientdata.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.6.3.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.3.js" />
+    <Content Include="Scripts\jquery-3.6.3.min.js" />
+    <Content Include="Scripts\jquery-3.6.3.slim.js" />
+    <Content Include="Scripts\jquery-3.6.3.slim.min.js" />
+    <Content Include="Scripts\vue.global.js" />
+    <Content Include="Scripts\vue.js" />
+    <Content Include="Scripts\vue.min.js" />
+    <Content Include="UI.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogicLayer\DoctorBll.cs" />
+    <Compile Include="BusinessLogicLayer\IDoctorBll.cs" />
+    <Compile Include="BusinessLogicLayer\IUserBll.cs" />
+    <Compile Include="BusinessLogicLayer\UserBll.cs" />
+    <Compile Include="DataAccessLayer\EduBase.cs" />
+    <Compile Include="DataAccessLayer\EduBasePgsql.cs" />
+    <Compile Include="DataAccessLayer\EduBaseSql.cs" />
+    <Compile Include="DataAccessLayer\EfHelper.cs" />
+    <Compile Include="DataAccessLayer\MyDbContext.cs" />
+    <Compile Include="DataAccessLayer\DcotorDal.cs" />
+    <Compile Include="DataAccessLayer\DoctorView.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\DrugView.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\IDoctorDal.cs" />
+    <Compile Include="DataAccessLayer\IUserDal.cs" />
+    <Compile Include="DataAccessLayer\Outpatientdata.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Outpatientdata.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Outpatientdata.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Outpatientdata.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Outpatientdata.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\PgsqlHelper.cs" />
+    <Compile Include="DataAccessLayer\SqlHelper.cs" />
+    <Compile Include="DataAccessLayer\tb_Booking.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\tb_Diagnosticlist.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\tb_Doctor.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\tb_Drug.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\tb_Keshi.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\tb_Pharmacy.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\tb_Pro_title.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\tb_Type.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\tb_User.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\tb_Worksheet.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\UserDal.cs" />
+    <Compile Include="DataAccessLayer\UWYView.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\WkView.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\WorksheetView.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\WYView.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\YYView.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\ZDrugView.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\ZDView.cs">
+      <DependentUpon>Outpatientdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor.Master.cs">
+      <DependentUpon>Doctor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor.Master.designer.cs">
+      <DependentUpon>Doctor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Dweb\doctorui.Master.cs">
+      <DependentUpon>doctorui.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dweb\doctorui.Master.designer.cs">
+      <DependentUpon>doctorui.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor_Index.aspx.cs">
+      <DependentUpon>Doctor_Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor_Index.aspx.designer.cs">
+      <DependentUpon>Doctor_Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor_login.aspx.cs">
+      <DependentUpon>Doctor_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor_login.aspx.designer.cs">
+      <DependentUpon>Doctor_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.Master.cs">
+      <DependentUpon>Index.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.Master.designer.cs">
+      <DependentUpon>Index.Master</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -79,16 +547,107 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Map.aspx.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Map.aspx.designer.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modle\DoctorModle.cs" />
+    <Compile Include="Modle\User.cs" />
+    <Compile Include="Navigate.Master.cs">
+      <DependentUpon>Navigate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Navigate.Master.designer.cs">
+      <DependentUpon>Navigate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Dweb\Patient.aspx.cs">
+      <DependentUpon>Patient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dweb\Patient.aspx.designer.cs">
+      <DependentUpon>Patient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personal.aspx.cs">
+      <DependentUpon>Personal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal.aspx.designer.cs">
+      <DependentUpon>Personal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="showdoc.aspx.cs">
+      <DependentUpon>showdoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="showdoc.aspx.designer.cs">
+      <DependentUpon>showdoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI.aspx.cs">
+      <DependentUpon>UI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI.aspx.designer.cs">
+      <DependentUpon>UI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Worksheet.aspx.cs">
+      <DependentUpon>Worksheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Worksheet.aspx.designer.cs">
+      <DependentUpon>Worksheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dweb\yy.aspx.cs">
+      <DependentUpon>yy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dweb\yy.aspx.designer.cs">
+      <DependentUpon>yy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="zj_yscx.aspx.cs">
+      <DependentUpon>zj_yscx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="zj_yscx.aspx.designer.cs">
+      <DependentUpon>zj_yscx.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Index.Master" />
+    <Content Include="Doctor.Master" />
+    <Content Include="Navigate.Master" />
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.6.3.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.3.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="chat\" />
+    <Folder Include="Common\" />
+    <Folder Include="Web\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Outpatientsystem.BLL\Outpatientsystem.BLL.csproj">
+      <Project>{786d0cec-46dd-43bf-bde6-470848c89f73}</Project>
+      <Name>Outpatientsystem.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -120,7 +679,12 @@
       <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

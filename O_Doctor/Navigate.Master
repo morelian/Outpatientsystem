@@ -1,0 +1,409 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Navigate.master.cs" Inherits="Outpatientsystem.Navigate" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>沐兰门诊系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="Css/animate.css" rel="stylesheet" />
+    <link href="Css/css.css" rel="stylesheet" />
+    <link href="Css/mCss.css" rel="stylesheet" />
+    <link href="Css/validationEngine.jquery.css" rel="stylesheet" />
+    <script src="Css/swiper-4.5.0.min.js"></script>
+    <link href="Css/swiper-4.5.0.min.css" rel="stylesheet" />
+    <script src="Css/jquery.validationEngine.min.js"></script>
+    <script src="Css/jquery.validationEngine-zh_CN.js"></script>
+    <script src="Css/jquery-3.2.1.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="boxAll" style="position:relative">
+
+   <div class="icoTopUser">
+  <div class="btnTopUser">
+    <a href="login.aspx">登录</a>
+    <a href="register.aspx">注册</a>
+  </div>
+  </div>
+  </div>
+<!--m-->
+<div class="boxTopM">
+  <a href="index.aspx"><img src="images/logo.png" class="logoM"></a>
+  <a href="javascript:void(0)" class="openMenu" id="menuM"></a>
+</div>
+<!--m-->
+
+<div class="boxTop">
+  <div class="boxTop1">
+    <a href="index.aspx"><img src="Image/logo2.jpg" class="logo"></a>
+    <a href="javascript:void(0)" class="openNav" id="btnTop"></a>
+    <div class="boxNav">
+      <ul>
+        <li>
+          <span class="on"><i></i><a href="index.aspx"><img src="images/imgNav1.png" class="imgNav"><img src="images/imgNav1Hover.png" class="imgNavOn"></a></span>
+        </li>
+        <li>
+          <span><i></i><a href="about.aspx"><img src="images/imgNav2.png" class="imgNav"><img src="images/imgNav2Hover.png" class="imgNavOn"></a></span>
+          <div class="padding1">
+            <a href="about_yyjj.aspx">医院简介</a>
+            <a href="about_yyxw.aspx">医院动态</a>
+            <a href="about_zzjg.aspx">组织架构</a>
+          </div>
+        </li>
+
+
+        <li>
+          <span><i></i><a href="jz.aspx"><img src="images/imgNav4.png" class="imgNav"><img src="images/imgNav4Hover.png" class="imgNavOn"></a></span>
+          <div class="padding3">
+            <a href="yy.aspx">预约挂号</a>
+            <a href="Worksheet.aspx">门诊排班</a>
+            <a href="jz.aspx">就诊须知</a>
+            <a href="jz_jzlc.aspx">就诊流程</a>
+            <a href="about_jtwz.aspx">交通位置</a>
+          </div>
+         </li>
+         <li>
+          <span><i></i><a href="ks.aspx"><img src="images/imgNav5.png" class="imgNav"><img src="images/imgNav5Hover.png" class="imgNavOn"></a></span>
+          <div class="padding4">
+                <a href="showks.aspx?id=75" >国医堂</a>
+              <a href="showks.aspx?id=76" >治未病科（中医健康管理中心）</a>
+              <a href="showks.aspx?id=88" >脑病科</a>
+              <a href="showks.aspx?id=86" >肺病科</a>
+              <a href="showks.aspx?id=85" >心血管科</a>
+              <a href="showks.aspx?id=80" >脾胃病科</a>
+              <a href="showks.aspx?id=81" >肾病科(含血透室)</a>
+              <a href="showks.aspx?id=107" >肝胆科</a>
+              <a href="showks.aspx?id=79" >内分泌科</a>
+              <a href="showks.aspx?id=89" >肿瘤科</a>
+              <a href="showks.aspx?id=108" >血液科</a>
+              <a href="showks.aspx?id=94" >急诊科</a>
+              <a href="showks.aspx?id=87" >重症医学科</a>
+              <a href="showks.aspx?id=90" >外一科（普外科）</a>
+              <a href="showks.aspx?id=93" >外二科（泌尿外科）</a>
+              <a href="showks.aspx?id=109" >肛肠科</a>
+              <a href="showks.aspx?id=92" >耳鼻咽喉科</a>
+              <a href="showks.aspx?id=111" >骨伤一科</a>
+              <a href="showks.aspx?id=98" >眼科</a>
+              <a href="showks.aspx?id=97" >口腔科</a>
+              <a href="showks.aspx?id=96" >皮肤科</a>
+              <a href="showks.aspx?id=77" >康复一科</a>
+              <a href="showks.aspx?id=83" >针灸科</a>
+              <a href="showks.aspx?id=84" >国医堂针推</a>
+              <a href="showks.aspx?id=91" >妇科</a>
+              <a href="showks.aspx?id=95" >儿科</a>
+              <a href="showks.aspx?id=104" >体检科</a>
+             </div>
+        </li>
+        <li>
+          <span><i></i><a href="zj.aspx"><img src="images/imgNav6.png" class="imgNav"><img src="images/imgNav6Hover.png" class="imgNavOn"></a></span>
+          <div class="padding5">
+            <a href="Worksheet.aspx">门诊排班</a>
+            <a href="zj_yscx.aspx">医生查询</a>
+          </div>
+        </li>
+        <li>
+          <span><i></i><a href="yzxx.aspx"><img src="images/imgNav11.png" class="imgNav"><img src="images/imgNav11Hover.png" class="imgNavOn"></a></span>
+          <div class="padding9">
+             <a href="lxwm.aspx">联系我们</a>
+              <a href="personal.aspx">个人信息</a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+    <div class="icoTop">
+      <a href="javascript:void(0)" class="topSearch"><i></i></a>
+    </div>
+  </div>
+</div>
+<div>
+        <asp:ContentPlaceHolder ID="body" runat="server">
+
+            </asp:ContentPlaceHolder>
+</div>
+<%--<%--<div class="searchTop">
+  <a href="javascript:void(0)"></a>
+  <span><form action="search.aspx"><input type="text" name="txtkeyword" class="inputTop" placeholder="请输入关键字"><input type="submit" class="submitTop" value="搜 索"></form></span>
+</div>--%>
+
+<%--<script>
+    $('.topSearch').click(function () {
+        $('.searchTop').slideDown();
+    });
+
+    $('.searchTop a').click(function () {
+        $('.searchTop').hide();
+    });
+
+    $('.topUser i').mouseenter(function () {
+        $('.topUser span').slideDown();
+    });
+
+    $('.icoTopUser').mouseleave(function () {
+        $('.topUser span').hide();
+    });
+</script>
+<script>
+$('.topSearch').click(function () {
+    $('.searchTop').slideDown();
+});
+</script>--%>--%>
+        <div>
+
+<div class="indBox">
+   
+
+
+
+ 
+
+
+
+<%--<script>
+    //首页banner
+    var banner = new Swiper('.banner', {
+        loop: true,
+        autoplay: {
+            delay: 4500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '#bannerIco',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    //首页bannerM
+    var bannerM = new Swiper('.bannerM', {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '#bannerIcoM',
+        }
+    });
+
+    $('.indexNewsNav a').click(function () {
+        $(this).siblings().removeClass('on');
+        $(this).addClass('on');
+        $('.indexNewsList').hide();
+        $('.indexNewsList').eq($(this).index()).show();
+    });
+
+    $('.indexNoticeNav span a').click(function () {
+        $(this).siblings().removeClass('on');
+        $(this).addClass('on');
+        $('.boxNotice').hide();
+        $('.boxNotice').eq($(this).index()).show();
+    });
+
+    if ($(window).width() > 768) {
+        var indDocList = new Swiper('.indDocList', {
+            loop: false,
+            spaceBetween: 10,
+            slidesPerView: 5,
+            slidesPerGroup: 5,
+            slidesPerColumn: 1,
+            pagination: {
+                el: '#docIco',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+    } else {
+        var indDocList = new Swiper('.indDocList', {
+            loop: false,
+            spaceBetween: 0,
+            slidesPerView: 1,
+            slidesPerColumn: 5,
+            pagination: {
+                el: '#docIco',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+    };
+
+    $('.indDocList').mouseenter(function () {
+        indDocList.autoplay.stop();
+    });
+    $('.indDocList').mouseleave(function () {
+        indDocList.autoplay.start();
+    });
+
+    $('body').css('background', 'url(images/bg.jpg)');
+</script>--%>
+
+  
+
+  
+<div class="rightNav">
+  <a href="yy.aspx"><img src="images/icoQuitNav6.png" /><div>预约挂号</div></a>
+  <a href="Worksheet.aspx"><img src="images/icoQuitNav1.png" /><div>门诊排班</div></a>
+  <a href="jz.aspx"><img src="images/icoQuitNav2.png" /><div>就诊须知</div></a>
+  <a href="jz_jzlc.aspx"><img src="images/icoQuitNav3.png" /><div>就诊流程</div></a>
+  <a href="about_jtwz.aspx"><img src="images/icoQuitNav4.png" /><div>交通位置</div></a>
+  <a href="javascript:void(0)" class="toTop"><img src="images/icoQuitNav5.png" /><div>返回顶部</div></a>
+</div>
+
+<a href="javascript:void(0)" class="toTopM"></a>
+
+</div>
+
+        </div>
+ 
+    </form>
+<script>
+    //滚动到顶部------------------------
+    $('.toTop,.toTopM').click(function () {
+        $('html,body').animate({ scrollTop: 0 }, 300);
+    });
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= 300) {
+            $('.toTop').css('display', 'block');
+            if ($(window).width() <= 768) {
+                $('.toTopM').show();
+            }
+        }
+        else {
+            $('.toTop').css('display', 'none');
+            $('.toTopM').hide();
+        }
+    });
+    //滚动到顶部------------------------
+</script>
+
+<script>
+    $(function () {
+
+        function attrMeta() {
+            if ($(window).width() >= 768) {
+                $('meta[name=viewport]').attr('content', 'width=1320,user-scalable=no');
+            }
+            else {
+                $('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no')
+            }
+        };
+        attrMeta();
+        $(window).resize(function () {
+            attrMeta();
+        });
+
+
+        document.body.addEventListener('touchstart', function () { });
+
+        //pc导航----------------------
+        var navOnIndex = $('.boxNav .on').parent('li').index();
+
+        $('.boxNav span').mouseenter(function () {
+            $('.boxNav div').hide();
+            $(this).siblings('div').slideDown();
+            $('.boxNav span').removeClass('on');
+            $(this).addClass('on');
+        });
+
+        $('.boxNav div').mouseleave(function () {
+            $(this).hide();
+            $('.boxNav span').removeClass('on');
+            $('.boxNav li').eq(navOnIndex).find('span').addClass('on');
+        });
+
+        $('.boxNav').mouseleave(function () {
+            $('.boxNav div').hide();
+            $('.boxNav span').removeClass('on');
+            $('.boxNav li').eq(navOnIndex).find('span').addClass('on');
+        });
+
+
+
+        var subNavOnIndex = $('.subNav .on').index();
+        $('.subNav a').mouseenter(function () {
+            $('.subNav a').removeClass('on');
+            $(this).addClass('on');
+        });
+        $('.subNav').mouseleave(function () {
+            $('.subNav a').removeClass('on');
+            $('.subNav a').eq(subNavOnIndex).addClass('on');
+            if (subNavOnIndex == -1) { $('.subNav a').removeClass('on'); }
+        });
+        //pc导航----------------------
+
+        //手机导航----------------------
+        $('#menuM').click(function () {
+            if ($(this).attr('class') == 'openMenu') {
+                $(this).attr('class', 'closeMenu');
+                $('#boxAll,.boxTopM').animate({ left: '-75%' }, 200);
+                $('.icoTopUser').animate({ right: '100%' }, 200);
+                $('.navTopM').animate({ left: '25%' }, 200);
+            }
+            else {
+                $(this).attr('class', 'openMenu');
+                $('#boxAll,.boxTopM').animate({ left: '0' }, 200);
+                $('.icoTopUser').animate({ right: '50px' }, 200);
+                $('.navTopM').animate({ left: '100%' }, 200);
+            }
+        });
+
+
+
+        $('.boxNavM i').click(function () {
+            if ($(this).attr('class') != 'on') {
+                $('.boxNavM i').attr('class', '');
+                $(this).attr('class', 'on');
+                $('.boxNavM div').hide();
+                $(this).parent().siblings('div').slideDown('slow');
+            }
+            else {
+                $(this).attr('class', '');
+                $('.boxNavM div').hide();
+            }
+
+        });
+
+
+        var webUrl = window.location.href;
+
+        $('.boxNavM div a').each(function () {
+            thisurl = $(this).attr('href');
+            if (webUrl.indexOf(thisurl) != -1) {
+                $(this).attr('class', 'on');
+                $(this).parent('div').show();
+                $(this).parents('li').find('i').attr('class', 'on');
+            }
+        });
+
+        //if(webUrl.indexOf('about_ths') != -1||webUrl.indexOf('about_vi') != -1||webUrl.indexOf('about_jyln') != -1){
+        //	$('.boxNavM li:eq(1)').find('i').attr('class','on');
+        //	$('.boxNavM li:eq(1)').find('div').show();
+        //	$('.boxNavM li:eq(1)').find('div a:eq(2)').attr('class','on');
+        //}
+
+        //手机导航---------------------
+
+    });
+</script>
+
+
+
+      
+
+</body>
+</html>
